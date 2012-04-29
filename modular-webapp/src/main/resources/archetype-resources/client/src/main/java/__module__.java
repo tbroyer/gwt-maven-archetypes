@@ -7,6 +7,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
@@ -119,7 +120,7 @@ public class ${module} implements EntryPoint {
 				textToServerLabel.setText(textToServer);
 				serverResponseLabel.setText("");
 				greetingService.greetServer(textToServer,
-						new AsyncCallback<String>() {
+						new AsyncCallback<GreetingResponse>() {
 							public void onFailure(Throwable caught) {
 								// Show the RPC error message to the user
 								dialogBox
@@ -131,11 +132,17 @@ public class ${module} implements EntryPoint {
 								closeButton.setFocus(true);
 							}
 
-							public void onSuccess(String result) {
+							public void onSuccess(GreetingResponse result) {
 								dialogBox.setText("Remote Procedure Call");
 								serverResponseLabel
 										.removeStyleName("serverResponseLabelError");
-								serverResponseLabel.setHTML(result);
+								serverResponseLabel.setHTML(new SafeHtmlBuilder()
+										.appendEscaped(result.getGreeting())
+										.appendHtmlConstant("<br><br>I am running ")
+										.appendEscaped(result.getServerInfo())
+										.appendHtmlConstant(".<br><br>It looks like you are using:<br>")
+										.appendEscaped(result.getUserAgent())
+										.toSafeHtml());
 								dialogBox.center();
 								closeButton.setFocus(true);
 							}
