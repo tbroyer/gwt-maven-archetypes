@@ -151,7 +151,6 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>gwt-maven-plugin</artifactId>
 						<configuration>
-							<webappDirectory>${basedir}/../server/target/basic-server-${project.version}/</webappDirectory>
 							<runTarget>http://localhost:8080/basic-server-${project.version}/</runTarget>
 						</configuration>
 					</plugin>
