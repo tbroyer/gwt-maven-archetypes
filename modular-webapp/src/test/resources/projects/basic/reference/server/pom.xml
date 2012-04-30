@@ -31,12 +31,12 @@
 				<dependency>
 					<groupId>archetype.it</groupId>
 					<artifactId>basic-shared</artifactId>
-					<version>0.1-SNAPSHOT</version>
+					<version>${project.version}</version>
 				</dependency>
 				<dependency>
 					<groupId>archetype.it</groupId>
 					<artifactId>basic-client</artifactId>
-					<version>0.1-SNAPSHOT</version>
+					<version>${project.version}</version>
 					<type>war</type>
 					<scope>runtime</scope>
 				</dependency>
