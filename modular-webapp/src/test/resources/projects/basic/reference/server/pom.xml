@@ -30,12 +30,12 @@
 			</activation>
 			<dependencies>
 				<dependency>
-					<groupId>archetype.it</groupId>
+					<groupId>${project.groupId}</groupId>
 					<artifactId>basic-shared</artifactId>
 					<version>${project.version}</version>
 				</dependency>
 				<dependency>
-					<groupId>archetype.it</groupId>
+					<groupId>${project.groupId}</groupId>
 					<artifactId>basic-client</artifactId>
 					<version>${project.version}</version>
 					<type>war</type>

@@ -31,12 +31,12 @@
 			</activation>
 			<dependencies>
 				<dependency>
-					<groupId>${groupId}</groupId>
+					<groupId>${dollar}{project.groupId}</groupId>
 					<artifactId>${rootArtifactId}-shared</artifactId>
 					<version>${dollar}{project.version}</version>
 				</dependency>
 				<dependency>
-					<groupId>${groupId}</groupId>
+					<groupId>${dollar}{project.groupId}</groupId>
 					<artifactId>${rootArtifactId}-client</artifactId>
 					<version>${dollar}{project.version}</version>
 					<type>war</type>
