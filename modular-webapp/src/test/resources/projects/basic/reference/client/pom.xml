@@ -80,13 +80,13 @@
 				<dependency>
 					<groupId>${project.groupId}</groupId>
 					<artifactId>basic-shared</artifactId>
-					<version>0.1-SNAPSHOT</version>
+					<version>${project.version}</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>${project.groupId}</groupId>
 					<artifactId>basic-shared</artifactId>
-					<version>0.1-SNAPSHOT</version>
+					<version>${project.version}</version>
 					<classifier>sources</classifier>
 					<scope>provided</scope>
 				</dependency>
