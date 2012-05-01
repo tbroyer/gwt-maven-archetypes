@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+#set( $dollar = '$' )
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>${rootArtifactId}</artifactId>
@@ -31,12 +33,12 @@
 				<dependency>
 					<groupId>${groupId}</groupId>
 					<artifactId>${rootArtifactId}-shared</artifactId>
-					<version>${project.version}</version>
+					<version>${dollar}{project.version}</version>
 				</dependency>
 				<dependency>
 					<groupId>${groupId}</groupId>
 					<artifactId>${rootArtifactId}-client</artifactId>
-					<version>${project.version}</version>
+					<version>${dollar}{project.version}</version>
 					<type>war</type>
 					<scope>runtime</scope>
 				</dependency>
@@ -52,11 +54,11 @@
 						<configuration>
 							<scanIntervalSeconds>1</scanIntervalSeconds>
 							<webApp>
-								<contextPath>/${project.build.finalName}</contextPath>
+								<contextPath>/${dollar}{project.build.finalName}</contextPath>
 								<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-									<resourcesAsCSV>src/main/webapp,${basedir}/../client/target/${rootArtifactId}-client-${project.version}/</resourcesAsCSV>
+									<resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
 								</baseResource>
-								<extraClasspath>${basedir}/../shared/target/classes/</extraClasspath>
+								<extraClasspath>${dollar}{basedir}/../shared/target/classes/</extraClasspath>
 							</webApp>
 						</configuration>
 					</plugin>

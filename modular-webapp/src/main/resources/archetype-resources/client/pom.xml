@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+#set( $dollar = '$' )
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -37,26 +38,26 @@
 						<module>${package}.${module}</module>
 					</modules>
 					<strict>true</strict>
-					<deploy>${project.build.directory}/gwtc/extra</deploy>
-					<extra>${project.build.directory}/gwtc/extra</extra>
-					<gen>${project.build.directory}/gwtc/gen</gen>
-					<workDir>${project.build.directory}/gwtc/work</workDir>
+					<deploy>${dollar}{project.build.directory}/gwtc/extra</deploy>
+					<extra>${dollar}{project.build.directory}/gwtc/extra</extra>
+					<gen>${dollar}{project.build.directory}/gwtc/gen</gen>
+					<workDir>${dollar}{project.build.directory}/gwtc/work</workDir>
 				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>com.google.gwt</groupId>
 						<artifactId>gwt-user</artifactId>
-						<version>${gwt.version}</version>
+						<version>${dollar}{gwt.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>com.google.gwt</groupId>
 						<artifactId>gwt-dev</artifactId>
-						<version>${gwt.version}</version>
+						<version>${dollar}{gwt.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>com.google.gwt</groupId>
 						<artifactId>gwt-servlet</artifactId>
-						<version>${gwt.version}</version>
+						<version>${dollar}{gwt.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -78,15 +79,15 @@
 			</activation>
 			<dependencies>
 				<dependency>
-					<groupId>${project.groupId}</groupId>
+					<groupId>${dollar}{project.groupId}</groupId>
 					<artifactId>${rootArtifactId}-shared</artifactId>
-					<version>${project.version}</version>
+					<version>${dollar}{project.version}</version>
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
-					<groupId>${project.groupId}</groupId>
+					<groupId>${dollar}{project.groupId}</groupId>
 					<artifactId>${rootArtifactId}-shared</artifactId>
-					<version>${project.version}</version>
+					<version>${dollar}{project.version}</version>
 					<classifier>sources</classifier>
 					<scope>provided</scope>
 				</dependency>
@@ -126,7 +127,7 @@
 								</goals>
 								<configuration>
 									<sources>
-										<source>${basedir}/../client/src/main/java</source>
+										<source>${dollar}{basedir}/../client/src/main/java</source>
 									</sources>
 								</configuration>
 							</execution>
@@ -139,7 +140,7 @@
 								<configuration>
 									<resources>
 										<resource>
-											<directory>${basedir}/../client/src/main/resources</directory>
+											<directory>${dollar}{basedir}/../client/src/main/resources</directory>
 											<targetPath>resources</targetPath>
 										</resource>
 									</resources>
@@ -151,7 +152,7 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>gwt-maven-plugin</artifactId>
 						<configuration>
-							<runTarget>http://localhost:8080/${rootArtifactId}-server-${project.version}/</runTarget>
+							<runTarget>http://localhost:8080/${rootArtifactId}-server-${dollar}{project.version}/</runTarget>
 						</configuration>
 					</plugin>
 				</plugins>
