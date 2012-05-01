@@ -51,5 +51,6 @@
 
 	<modules>
 		<module>modular-webapp</module>
+		<module>modular-requestfactory</module>
 	</modules>
 </project>
