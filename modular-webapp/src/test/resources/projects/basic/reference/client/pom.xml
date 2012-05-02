@@ -94,6 +94,21 @@
 		</profile>
 		<profile>
 			<id>draft</id>
+			<dependencies>
+				<dependency>
+					<groupId>${project.groupId}</groupId>
+					<artifactId>basic-shared</artifactId>
+					<version>${project.version}</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>${project.groupId}</groupId>
+					<artifactId>basic-shared</artifactId>
+					<version>${project.version}</version>
+					<classifier>sources</classifier>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
 			<build>
 				<plugins>
 					<plugin>
@@ -126,7 +141,7 @@
 								</goals>
 								<configuration>
 									<sources>
-										<source>${basedir}/../client/src/main/java</source>
+										<source>${basedir}/../shared/src/main/java</source>
 									</sources>
 								</configuration>
 							</execution>
@@ -139,7 +154,7 @@
 								<configuration>
 									<resources>
 										<resource>
-											<directory>${basedir}/../client/src/main/resources</directory>
+											<directory>${basedir}/../shared/src/main/resources</directory>
 											<targetPath>resources</targetPath>
 										</resource>
 									</resources>
