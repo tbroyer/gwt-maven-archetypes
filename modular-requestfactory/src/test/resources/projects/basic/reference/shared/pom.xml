@@ -14,6 +14,7 @@
 		<dependency>
 			<groupId>com.google.web.bindery</groupId>
 			<artifactId>requestfactory-client</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
