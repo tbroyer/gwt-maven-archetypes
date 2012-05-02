@@ -152,6 +152,7 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>gwt-maven-plugin</artifactId>
 						<configuration>
+							<noServer>true</noServer>
 							<runTarget>http://localhost:8080/${rootArtifactId}-server-${dollar}{project.version}/</runTarget>
 						</configuration>
 					</plugin>
