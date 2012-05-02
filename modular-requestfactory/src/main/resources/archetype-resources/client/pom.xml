@@ -102,7 +102,7 @@
 						<artifactId>gwt-maven-plugin</artifactId>
 						<configuration>
 							<modules>
-								<module>${package}.${module}-dev</module>
+								<module>${package}.${module}_dev</module>
 							</modules>
 							<draftCompile>true</draftCompile>
 							<style>PRETTY</style>

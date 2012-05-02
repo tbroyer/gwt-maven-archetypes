@@ -101,7 +101,7 @@
 						<artifactId>gwt-maven-plugin</artifactId>
 						<configuration>
 							<modules>
-								<module>it.pkg.Basic-dev</module>
+								<module>it.pkg.Basic_dev</module>
 							</modules>
 							<draftCompile>true</draftCompile>
 							<style>PRETTY</style>
