@@ -13,7 +13,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.google.web.bindery</groupId>
-			<artifactId>requestfactory-server</artifactId>
+			<artifactId>requestfactory-client</artifactId>
 		</dependency>
 	</dependencies>
 
