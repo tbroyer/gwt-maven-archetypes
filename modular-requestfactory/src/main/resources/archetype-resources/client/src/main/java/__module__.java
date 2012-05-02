@@ -15,6 +15,8 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.web.bindery.event.shared.EventBus;
+import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
 
@@ -36,9 +38,16 @@ public class ${module} implements EntryPoint {
 	private final ${module}Factory factory = GWT.create(${module}Factory.class);
 
 	/**
+	 * Create the event bus.
+	 */
+	private final EventBus eventBus = new SimpleEventBus();
+
+	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		factory.initialize(eventBus);
+
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
 		nameField.setText("GWT User");
