@@ -28,6 +28,11 @@
 				<artifactId>requestfactory-apt</artifactId>
 				<version>${dollar}{gwt.version}</version>
 			</dependency>
+                        <dependency>
+                                <groupId>com.google.web.bindery</groupId>
+                                <artifactId>requestfactory-client</artifactId>
+                                <version>${dollar}{gwt.version}</version>
+                        </dependency>
 			<dependency>
 				<groupId>com.google.web.bindery</groupId>
 				<artifactId>requestfactory-server</artifactId>
