@@ -38,7 +38,7 @@
 						<module>${package}.${module}</module>
 					</modules>
 					<strict>true</strict>
-					<deploy>${dollar}{project.build.directory}/gwtc/extra</deploy>
+					<deploy>${dollar}{project.build.directory}/gwtc/deploy</deploy>
 					<extra>${dollar}{project.build.directory}/gwtc/extra</extra>
 					<gen>${dollar}{project.build.directory}/gwtc/gen</gen>
 					<workDir>${dollar}{project.build.directory}/gwtc/work</workDir>
