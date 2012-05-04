@@ -49,6 +49,10 @@
 		<url>https://github.com/tbroyer/gwt-maven-archetypes/issues</url>
 	</issueManagement>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<modules>
 		<module>modular-webapp</module>
 		<module>modular-requestfactory</module>
