@@ -4,3 +4,8 @@ target/
 .project
 .settings/
 
+# Intellij
+*.iml
+*.ipr
+*.iws
+.idea/
