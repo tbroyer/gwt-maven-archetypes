@@ -37,7 +37,7 @@
 						<module>it.pkg.Basic</module>
 					</modules>
 					<strict>true</strict>
-					<deploy>${project.build.directory}/gwtc/extra</deploy>
+					<deploy>${project.build.directory}/gwtc/deploy</deploy>
 					<extra>${project.build.directory}/gwtc/extra</extra>
 					<gen>${project.build.directory}/gwtc/gen</gen>
 					<workDir>${project.build.directory}/gwtc/work</workDir>
