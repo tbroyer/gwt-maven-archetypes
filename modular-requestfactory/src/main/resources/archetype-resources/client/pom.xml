@@ -95,6 +95,9 @@
 		</profile>
 		<profile>
 			<id>draft</id>
+			<activation>
+				<property><name>draft</name></property>
+			</activation>
 			<build>
 				<plugins>
 					<plugin>
