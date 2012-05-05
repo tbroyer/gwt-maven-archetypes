@@ -26,7 +26,7 @@
 		<profile>
 			<id>prod</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<property><name>!dev</name></property>
 			</activation>
 			<dependencies>
 				<dependency>
@@ -45,6 +45,9 @@
 		</profile>
 		<profile>
 			<id>dev</id>
+			<activation>
+				<property><name>dev</name></property>
+			</activation>
 			<build>
 				<plugins>
 					<plugin>
