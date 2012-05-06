@@ -14,47 +14,45 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>net.ltgt.gwt</groupId>
-	<artifactId>gwt-maven-archetypes</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+  <groupId>net.ltgt.gwt</groupId>
+  <artifactId>gwt-maven-archetypes</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<inceptionYear>2012</inceptionYear>
+  <inceptionYear>2012</inceptionYear>
+  <licenses>
+    <license>
+      <name>Apache 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
 
-	<developers>
-		<developer>
-			<name>Thomas Broyer</name>
-			<email>t.broyer@ltgt.net</email>
-		</developer>
-	</developers>
+  <developers>
+    <developer>
+      <name>Thomas Broyer</name>
+      <email>t.broyer@ltgt.net</email>
+    </developer>
+  </developers>
 
-	<licenses>
-		<license>
-			<name>Apache 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
-		</license>
-	</licenses>
+  <modules>
+    <module>modular-webapp</module>
+    <module>modular-requestfactory</module>
+  </modules>
 
-	<scm>
-		<connection>scm:git:git://github.com/tbroyer/gwt-maven-archetypes.git</connection>
-		<developerConnection>scm:git:git@github.com:tbroyer/gwt-maven-archetypes.git</developerConnection>
-		<url>https://github.com/tbroyer/gwt-maven-archetypes</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/tbroyer/gwt-maven-archetypes/issues</url>
-	</issueManagement>
+  <scm>
+    <connection>scm:git:git://github.com/tbroyer/gwt-maven-archetypes.git</connection>
+    <developerConnection>scm:git:git@github.com:tbroyer/gwt-maven-archetypes.git</developerConnection>
+    <url>https://github.com/tbroyer/gwt-maven-archetypes</url>
+  </scm>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/tbroyer/gwt-maven-archetypes/issues</url>
+  </issueManagement>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
-	<modules>
-		<module>modular-webapp</module>
-		<module>modular-requestfactory</module>
-	</modules>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 </project>
