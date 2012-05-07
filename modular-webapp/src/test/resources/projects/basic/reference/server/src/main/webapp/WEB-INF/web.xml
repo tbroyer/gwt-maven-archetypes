@@ -11,7 +11,7 @@
 
   <servlet-mapping>
     <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/basic/greet</url-pattern>
+    <url-pattern>/Basic/greet</url-pattern>
   </servlet-mapping>
 
 	<!-- Default page to serve -->
