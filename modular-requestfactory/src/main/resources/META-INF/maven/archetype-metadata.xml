@@ -22,6 +22,15 @@
     <requiredProperty key="module">
       <defaultValue>App</defaultValue>
     </requiredProperty>
+    <requiredProperty key="gwt-version">
+      <defaultValue>2.4.0</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gwt-maven-plugin-version">
+      <defaultValue>2.4.0</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="jetty-maven-plugin-version">
+      <defaultValue>8.1.3.v20120416</defaultValue>
+    </requiredProperty>
   </requiredProperties>
   <modules>
     <module id="${rootArtifactId}-client" dir="client" name="${rootArtifactId}-client">
