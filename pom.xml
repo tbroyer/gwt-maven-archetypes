@@ -36,6 +36,16 @@
       <email>t.broyer@ltgt.net</email>
     </developer>
   </developers>
+  <contributors>
+    <contributor>
+      <name>Alexandre Ardhuin</name>
+      <email>alexandre.ardhuin@gmail.com</email>
+    </contributor>
+    <contributor>
+      <name>Yannis Gonianakis</name>
+      <email>jgonian@gmail.com</email>
+    </contributor>
+  </contributors>
 
   <modules>
     <module>modular-webapp</module>
