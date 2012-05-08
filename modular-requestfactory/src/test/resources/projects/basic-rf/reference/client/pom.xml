@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <artifactId>basic</artifactId>
     <groupId>archetype.it</groupId>
+    <artifactId>basic-rf</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>basic-client</artifactId>
+  <artifactId>basic-rf-client</artifactId>
   <packaging>war</packaging>
 
   <dependencies>
@@ -81,13 +81,13 @@
       <dependencies>
         <dependency>
           <groupId>${project.groupId}</groupId>
-          <artifactId>basic-shared</artifactId>
+          <artifactId>basic-rf-shared</artifactId>
           <version>${project.version}</version>
           <scope>provided</scope>
         </dependency>
         <dependency>
           <groupId>${project.groupId}</groupId>
-          <artifactId>basic-shared</artifactId>
+          <artifactId>basic-rf-shared</artifactId>
           <version>${project.version}</version>
           <classifier>sources</classifier>
           <scope>provided</scope>
@@ -164,7 +164,7 @@
             <artifactId>gwt-maven-plugin</artifactId>
             <configuration>
               <noServer>true</noServer>
-              <runTarget>http://localhost:8080/basic-server-${project.version}/</runTarget>
+              <runTarget>http://localhost:8080/basic-rf-server-${project.version}/</runTarget>
             </configuration>
           </plugin>
         </plugins>

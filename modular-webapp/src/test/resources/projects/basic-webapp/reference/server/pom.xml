@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <artifactId>basic</artifactId>
     <groupId>archetype.it</groupId>
+    <artifactId>basic-webapp</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>basic-server</artifactId>
+  <artifactId>basic-webapp-server</artifactId>
   <packaging>war</packaging>
 
   <dependencies>
@@ -33,12 +33,12 @@
       <dependencies>
         <dependency>
           <groupId>${project.groupId}</groupId>
-          <artifactId>basic-shared</artifactId>
+          <artifactId>basic-webapp-shared</artifactId>
           <version>${project.version}</version>
         </dependency>
         <dependency>
           <groupId>${project.groupId}</groupId>
-          <artifactId>basic-client</artifactId>
+          <artifactId>basic-webapp-client</artifactId>
           <version>${project.version}</version>
           <type>war</type>
           <scope>runtime</scope>
@@ -62,7 +62,7 @@
               <webApp>
                 <contextPath>/${project.build.finalName}</contextPath>
                 <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                  <resourcesAsCSV>src/main/webapp,${basedir}/../client/target/basic-client-${project.version}/</resourcesAsCSV>
+                  <resourcesAsCSV>src/main/webapp,${basedir}/../client/target/basic-webapp-client-${project.version}/</resourcesAsCSV>
                 </baseResource>
                 <extraClasspath>${basedir}/../shared/target/classes/</extraClasspath>
               </webApp>

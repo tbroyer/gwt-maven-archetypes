@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <artifactId>basic</artifactId>
     <groupId>archetype.it</groupId>
+    <artifactId>basic-webapp</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>basic-shared</artifactId>
+  <artifactId>basic-webapp-shared</artifactId>
 
   <dependencies>
     <dependency>
