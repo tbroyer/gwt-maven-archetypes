@@ -14,14 +14,14 @@ In order to generate a modular GWT project from the available archetypes, first 
 ### Generate a project
 
     mvn archetype:generate \
-       -DarchetypeGroupId=net.ltgt.gwt \
+       -DarchetypeGroupId=net.ltgt.gwt.archetypes \
        -DarchetypeArtifactId=<artifactId> \
        -DarchetypeVersion=1.0-SNAPSHOT
 
 where the available `<artifactIds>` are:
 
-* `gwt-maven-archetypes-modular-webapp`
-* `gwt-maven-archetypes-modular-requestfactory`
+* `modular-webapp`
+* `modular-requestfactory`
 
 
 ### Start the development mode
