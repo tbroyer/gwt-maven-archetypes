@@ -22,6 +22,9 @@
     <requiredProperty key="module">
       <defaultValue>App</defaultValue>
     </requiredProperty>
+    <requiredProperty key="module-short-name">
+      <defaultValue>${module.toLowerCase()}</defaultValue>
+    </requiredProperty>
     <requiredProperty key="gwt-version">
       <defaultValue>2.4.0</defaultValue>
     </requiredProperty>

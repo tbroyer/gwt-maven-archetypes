@@ -11,7 +11,7 @@
 
   <servlet-mapping>
     <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/${rootArtifactId}/greet</url-pattern>
+    <url-pattern>/${module-short-name}/greet</url-pattern>
   </servlet-mapping>
 
 	<!-- Default page to serve -->
