@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+
+    <!--                                                               -->
+    <!-- Consider inlining CSS to reduce the number of requested files -->
+    <!--                                                               -->
+    <link type="text/css" rel="stylesheet" href="${rootArtifactId}.css">
+    <link type="text/css" rel="stylesheet" href="${module-short-name}/gwt/clean/clean.css">
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>Web Application Starter Project</title>
+  </head>
+  <body>
+    <form method=POST action=j_security_check >
+      <div>
+        <label for="j_username">Username</label>
+        <input name="j_username" id="j_username" autofocus type="text" class="gwt-TextBox">
+      </div>
+      <div>
+        <label for="j_password">Password</label>
+        <input name="j_password" id="j_password" type="password" class="gwt-PasswordTextBox">
+      </div>
+      <div>
+        <button type="submit" class="gwt-Button">Sign In</button>
+      </div>
+    </form>
+  </body>
+</html>

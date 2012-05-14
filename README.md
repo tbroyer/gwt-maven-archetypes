@@ -22,7 +22,7 @@ where the available `<artifactIds>` are:
 
 * `modular-webapp`
 * `modular-requestfactory`
-
+*  guice-rf-activities
 
 ### Start the development mode
 
