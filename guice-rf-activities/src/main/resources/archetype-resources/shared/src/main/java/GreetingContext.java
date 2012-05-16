@@ -7,7 +7,7 @@ import com.google.web.bindery.requestfactory.shared.ServiceName;
 /**
  * The client side stub for the RequestFactory service.
  */
-@ServiceName("${package}.GreetingService")
+@ServiceName(value="${package}.GreetingService", locator="${package}.GuiceServiceLocator")
 public interface GreetingContext extends RequestContext {
 	Request<GreetingResponseProxy> greetServer(String name);
 }

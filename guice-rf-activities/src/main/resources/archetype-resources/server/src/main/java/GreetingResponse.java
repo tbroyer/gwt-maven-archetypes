@@ -6,6 +6,8 @@ public class GreetingResponse {
 	private boolean successful;
 	private String error;
 	private String greeting;
+	private String serverInfo;
+	private String userAgent;
 	
 	public boolean isSuccessful() {
 		return successful;
@@ -32,10 +34,18 @@ public class GreetingResponse {
 	}
 
 	public String getServerInfo() {
-		return RequestFactoryServlet.getThreadLocalServletContext().getServerInfo();
+		return serverInfo;
+	}
+
+	public void setServerInfo(String serverInfo) {
+		this.serverInfo = serverInfo;
 	}
 
 	public String getUserAgent() {
-		return RequestFactoryServlet.getThreadLocalRequest().getHeader("User-Agent");
+		return userAgent;
+	}
+
+	public void setUserAgent(String userAgent) {
+		this.userAgent = userAgent;
 	}
 }
