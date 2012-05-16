@@ -1,11 +1,26 @@
 package ${package};
 
+import com.google.inject.Provider;
+import com.google.inject.Inject;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * The server side implementation of the GreetingContext.
  */
 public class GreetingService {
 
-	public static GreetingResponse greetServer(String input) {
+	private final Provider<ServletContext> ctx;
+	private final Provider<HttpServletRequest> req;
+
+	@Inject
+	GreetingService(Provider<ServletContext> ctx, Provider<HttpServletRequest> req) {
+		this.ctx = ctx;
+		this.req = req;
+	}
+
+	public GreetingResponse greetServer(String input) {
 		GreetingResponse response = new GreetingResponse();
 
 		// Verify that the input is valid. 
@@ -16,8 +31,10 @@ public class GreetingService {
 		} else {
 			response.setSuccessful(true);
 			response.setGreeting("Hello, " + input + "!");
+			response.setServerInfo(ctx.get().getServerInfo());
+			response.setUserAgent(req.get().getHeader("User-Agent"));
 		}
-		
+
 		return response;
 	}
 }
