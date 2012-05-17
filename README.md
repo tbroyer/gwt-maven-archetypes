@@ -28,6 +28,6 @@ where the available `<artifactIds>` are:
 
 Change directory to your generated project and issue the following commands:
 
-1. `mvn clean package -Ddraft`
-2. In one terminal window: `cd server && mvn jetty:start -Ddev`
+1. `mvn clean install -Ddraft`
+2. In one terminal window: `cd server && mvn jetty:start`
 3. In another terminal window: `cd client && mvn gwt:run -Ddev`
