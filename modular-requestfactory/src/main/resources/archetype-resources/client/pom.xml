@@ -14,6 +14,19 @@
 
   <dependencies>
     <dependency>
+      <groupId>${dollar}{project.groupId}</groupId>
+      <artifactId>${rootArtifactId}-shared</artifactId>
+      <version>${dollar}{project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>${dollar}{project.groupId}</groupId>
+      <artifactId>${rootArtifactId}-shared</artifactId>
+      <version>${dollar}{project.version}</version>
+      <classifier>sources</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
     </dependency>
@@ -72,29 +85,6 @@
   </build>
 
   <profiles>
-    <profile>
-      <id>prod</id>
-      <activation>
-        <property>
-          <name>!dev</name>
-        </property>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>${dollar}{project.groupId}</groupId>
-          <artifactId>${rootArtifactId}-shared</artifactId>
-          <version>${dollar}{project.version}</version>
-          <scope>provided</scope>
-        </dependency>
-        <dependency>
-          <groupId>${dollar}{project.groupId}</groupId>
-          <artifactId>${rootArtifactId}-shared</artifactId>
-          <version>${dollar}{project.version}</version>
-          <classifier>sources</classifier>
-          <scope>provided</scope>
-        </dependency>
-      </dependencies>
-    </profile>
     <profile>
       <id>draft</id>
       <activation>
