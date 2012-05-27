@@ -14,6 +14,18 @@
 
   <dependencies>
     <dependency>
+      <groupId>${dollar}{project.groupId}</groupId>
+      <artifactId>${rootArtifactId}-shared</artifactId>
+      <version>${dollar}{project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${dollar}{project.groupId}</groupId>
+      <artifactId>${rootArtifactId}-client</artifactId>
+      <version>${dollar}{project.version}</version>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-servlet</artifactId>
     </dependency>
@@ -23,54 +35,22 @@
     </dependency>
   </dependencies>
 
-  <profiles>
-    <profile>
-      <id>prod</id>
-      <activation>
-        <property>
-          <name>!dev</name>
-        </property>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>${dollar}{project.groupId}</groupId>
-          <artifactId>${rootArtifactId}-shared</artifactId>
-          <version>${dollar}{project.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>${dollar}{project.groupId}</groupId>
-          <artifactId>${rootArtifactId}-client</artifactId>
-          <version>${dollar}{project.version}</version>
-          <type>war</type>
-          <scope>runtime</scope>
-        </dependency>
-      </dependencies>
-    </profile>
-    <profile>
-      <id>dev</id>
-      <activation>
-        <property>
-          <name>dev</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-maven-plugin</artifactId>
-            <configuration>
-              <scanIntervalSeconds>1</scanIntervalSeconds>
-              <webApp>
-                <contextPath>/${dollar}{project.build.finalName}</contextPath>
-                <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                  <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
-                </baseResource>
-                <extraClasspath>${dollar}{basedir}/../shared/target/classes/</extraClasspath>
-              </webApp>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <configuration>
+          <scanIntervalSeconds>1</scanIntervalSeconds>
+          <webApp>
+            <contextPath>/${dollar}{project.build.finalName}</contextPath>
+            <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+              <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
+            </baseResource>
+            <extraClasspath>${dollar}{basedir}/../shared/target/classes/</extraClasspath>
+          </webApp>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
