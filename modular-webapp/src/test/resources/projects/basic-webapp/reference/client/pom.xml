@@ -86,11 +86,6 @@
   <profiles>
     <profile>
       <id>draft</id>
-      <activation>
-        <property>
-          <name>draft</name>
-        </property>
-      </activation>
       <build>
         <plugins>
           <plugin>
@@ -109,11 +104,6 @@
     </profile>
     <profile>
       <id>dev</id>
-      <activation>
-        <property>
-          <name>dev</name>
-        </property>
-      </activation>
       <build>
         <plugins>
           <plugin>

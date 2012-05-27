@@ -39,4 +39,4 @@ There are two profiles defined in the POM file of client module:
 * `dev` is to speed-up development with gwt:run and jetty:start by not requiring a restart when a change to shared is made
 * `draft` is to speed-up GWT compilation and will only compile (by default) for WebKit-based browsers (Safari, Chrome)
 
-To activate `dev` or `draft` you have to provide the `-Ddev` or `-Ddraft` system properties respectively.
+Use the -P option to explicitly activate these profiles (e.g. -Pdev,draft).
