@@ -107,8 +107,8 @@
     </pluginManagement>
   </build>
   <modules>
-    <module>client</module>
-    <module>shared</module>
-    <module>server</module>
+    <module>basic-rf-client</module>
+    <module>basic-rf-shared</module>
+    <module>basic-rf-server</module>
   </modules>
 </project>

@@ -91,8 +91,8 @@
     </pluginManagement>
   </build>
   <modules>
-    <module>client</module>
-    <module>shared</module>
-    <module>server</module>
+    <module>basic-webapp-client</module>
+    <module>basic-webapp-shared</module>
+    <module>basic-webapp-server</module>
   </modules>
 </project>
