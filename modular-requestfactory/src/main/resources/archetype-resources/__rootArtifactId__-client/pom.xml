@@ -129,7 +129,7 @@
                 </goals>
                 <configuration>
                   <sources>
-                    <source>${dollar}{basedir}/../shared/src/main/java</source>
+                    <source>${dollar}{basedir}/../${rootArtifactId}-shared/src/main/java</source>
                   </sources>
                 </configuration>
               </execution>
@@ -142,7 +142,7 @@
                 <configuration>
                   <resources>
                     <resource>
-                      <directory>${dollar}{basedir}/../shared/src/main/resources</directory>
+                      <directory>${dollar}{basedir}/../${rootArtifactId}-shared/src/main/resources</directory>
                       <targetPath>resources</targetPath>
                     </resource>
                   </resources>

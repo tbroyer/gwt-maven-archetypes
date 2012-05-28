@@ -128,7 +128,7 @@
                 </goals>
                 <configuration>
                   <sources>
-                    <source>${basedir}/../shared/src/main/java</source>
+                    <source>${basedir}/../basic-webapp-shared/src/main/java</source>
                   </sources>
                 </configuration>
               </execution>
@@ -141,7 +141,7 @@
                 <configuration>
                   <resources>
                     <resource>
-                      <directory>${basedir}/../shared/src/main/resources</directory>
+                      <directory>${basedir}/../basic-webapp-shared/src/main/resources</directory>
                       <targetPath>resources</targetPath>
                     </resource>
                   </resources>

@@ -74,9 +74,9 @@
           <webApp>
             <contextPath>/${dollar}{project.build.finalName}</contextPath>
             <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-              <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
+              <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../${rootArtifactId}-client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
             </baseResource>
-            <extraClasspath>${dollar}{basedir}/../shared/target/classes/</extraClasspath>
+            <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
           </webApp>
         </configuration>
       </plugin>
