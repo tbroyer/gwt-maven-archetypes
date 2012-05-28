@@ -78,7 +78,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
-          <packagingExcludes>WEB-INF/**/*.*</packagingExcludes>
+          <packagingExcludes>WEB-INF/**</packagingExcludes>
         </configuration>
       </plugin>
     </plugins>
