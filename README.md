@@ -6,7 +6,8 @@ This project contains Maven archetypes for modular GWT projects.
 How to use
 ----------
 
-In order to generate a modular GWT project from the available archetypes, first you need to clone and install this project locally:
+In order to generate a modular GWT project from the available archetypes, first
+you need to clone and install this project locally:
 
     git clone https://github.com/tbroyer/gwt-maven-archetypes.git
     cd gwt-maven-archetypes && maven clean install
@@ -36,7 +37,10 @@ Change directory to your generated project and issue the following commands:
 
 There are two profiles defined in the POM file of client module:
 
-* `dev` is to speed-up development with `gwt:run` and `jetty:start` by not requiring a restart when a change to `shared` is made
-* `draft` is to speed-up GWT compilation and will only compile (by default) for WebKit-based browsers (Safari, Chrome)
+* `dev` is to speed-up development with `gwt:run` and `jetty:start` by not
+  requiring a restart when a change to `shared` is made
+* `draft` is to speed-up GWT compilation, and will only compile (by default)
+  for WebKit-based browsers (Safari, Chrome)
 
-To activate `dev` or `draft` you have to provide the `-Ddev` or `-Ddraft` system properties respectively.
+To activate `dev` or `draft` you have to provide the `-Ddev` or `-Ddraft`
+system properties respectively.
