@@ -154,7 +154,7 @@
             <artifactId>gwt-maven-plugin</artifactId>
             <configuration>
               <noServer>true</noServer>
-              <runTarget>http://localhost:8080/basic-webapp-server-${project.version}/</runTarget>
+              <runTarget>http://localhost:8080/</runTarget>
             </configuration>
           </plugin>
         </plugins>

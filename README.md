@@ -30,7 +30,7 @@ where the available `<artifactIds>` are:
 Change directory to your generated project and issue the following commands:
 
 1. `mvn clean install -Dgwt.compiler.skip`
-2. In one terminal window: `cd *-server && mvn jetty:start`
+2. In one terminal window: `cd *-server && mvn jetty:start -Ddev`
 3. In another terminal window: `cd *-client && mvn gwt:run -Ddev`
 
 ### Profiles
@@ -52,7 +52,7 @@ Note that the DevMode (`gwt:run`) won't work after a compilation made with the
 
 When working on the server-side code exclusively, you don't need GWT's DevMode.
 You can then compile the GWT app using `mvn package` or `mvn package -Ddraft`
-and then `cd *-server && mvn jetty:start`. The webapp will be redeployed
+and then `cd *-server && mvn jetty:start -Ddev`. The webapp will be redeployed
 automatically when you change a class (either compiled by your IDE, or by `mvn
 compile`) in either the `${rootArtifactId}-server` or
 `${rootArtifactId}-shared` module (be careful though when changing classes in
@@ -62,8 +62,7 @@ GWT-RPC).
 When working on the client-side code exclusively, to quickly test it in a
 browser in production mode, use `mvn package -Ddraft`. You can use `mvn package
 -Ddraft -pl :${rootArtifactId}-client -am` while the Jetty server is running
-(launched by `cd *-server && mvn jetty:start`), and then simply hit `F5` in
-your browser. Make sure you use a browser compatible with the one declared in
-the `${rootArtifactId}-client/src/main/java/${package}/${module}_dev.gwt.xml`
+(launched by `cd *-server && mvn jetty:start -Ddev`), and then simply hit `F5`
+in your browser. Make sure you use a browser compatible with the one declared
+in the `${rootArtifactId}-client/src/main/java/${package}/${module}_dev.gwt.xml`
 file (by default, Safari or Chrome).
-

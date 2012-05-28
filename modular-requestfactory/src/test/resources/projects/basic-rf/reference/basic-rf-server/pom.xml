@@ -68,20 +68,6 @@
     </plugins>
     <pluginManagement>
       <plugins>
-        <plugin>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <configuration>
-            <scanIntervalSeconds>1</scanIntervalSeconds>
-            <webApp>
-              <contextPath>/${project.build.finalName}</contextPath>
-              <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                <resourcesAsCSV>src/main/webapp,${basedir}/../basic-rf-client/target/basic-rf-client-${project.version}/</resourcesAsCSV>
-              </baseResource>
-              <extraClasspath>${basedir}/../basic-rf-shared/target/classes/</extraClasspath>
-            </webApp>
-          </configuration>
-        </plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
         <plugin>
@@ -111,4 +97,34 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <property>
+          <name>dev</name>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <configuration>
+                <scanIntervalSeconds>1</scanIntervalSeconds>
+                <webApp>
+                  <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+                    <resourcesAsCSV>src/main/webapp,${basedir}/../basic-rf-client/target/basic-rf-client-${project.version}/</resourcesAsCSV>
+                  </baseResource>
+                  <extraClasspath>${basedir}/../basic-rf-shared/target/classes/</extraClasspath>
+                </webApp>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
 </project>

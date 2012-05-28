@@ -85,14 +85,6 @@
           <groupId>org.mortbay.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <configuration>
-            <scanIntervalSeconds>1</scanIntervalSeconds>
-            <webApp>
-              <contextPath>/${dollar}{project.build.finalName}</contextPath>
-              <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../${rootArtifactId}-client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
-              </baseResource>
-              <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
-            </webApp>
             <loginServices>
               <loginService implementation="org.eclipse.jetty.security.HashLoginService">
                 <name>${module}</name>
@@ -130,4 +122,34 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <property>
+          <name>dev</name>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <configuration>
+                <scanIntervalSeconds>1</scanIntervalSeconds>
+                <webApp>
+                  <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+                    <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../${rootArtifactId}-client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
+                  </baseResource>
+                  <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
+                </webApp>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
 </project>
