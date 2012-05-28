@@ -23,7 +23,7 @@ where the available `<artifactIds>` are:
 
 * `modular-webapp`
 * `modular-requestfactory`
-*  guice-rf-activities
+*  `guice-rf-activities`
 
 ### Start the development mode
 
@@ -42,8 +42,11 @@ There are two profiles defined in the POM file of client module:
 * `draft` is to speed-up GWT compilation, and will only compile (by default)
   for WebKit-based browsers (Safari, Chrome)
 
-To activate `dev` or `draft` you have to provide the `-Ddev` or `-Ddraft`
-system properties respectively.
+To activate `dev` or `draft` you can provide the `-Ddev` or `-Ddraft` system
+properties respectively, or use `-Pdev` or `-Pdraft`.
+
+Note that the DevMode (`gwt:run`) won't work after a compilation made with the
+`draft` profile. You'll have to `mvn clean` the project first and start over.
 
 ### Productivity tips
 
