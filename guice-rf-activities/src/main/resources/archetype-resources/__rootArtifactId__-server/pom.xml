@@ -78,29 +78,29 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.mortbay.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <configuration>
-          <scanIntervalSeconds>1</scanIntervalSeconds>
-          <webApp>
-            <contextPath>/${dollar}{project.build.finalName}</contextPath>
-            <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-              <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../${rootArtifactId}-client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
-            </baseResource>
-            <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
-          </webApp>
-          <loginServices>
-            <loginService implementation="org.eclipse.jetty.security.HashLoginService">
-              <name>${module}</name>
-              <config>${dollar}{basedir}/src/etc/dev-realm.properties</config>
-            </loginService>
-          </loginServices>
-        </configuration>
-      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <configuration>
+            <scanIntervalSeconds>1</scanIntervalSeconds>
+            <webApp>
+              <contextPath>/${dollar}{project.build.finalName}</contextPath>
+              <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+                <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../${rootArtifactId}-client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
+              </baseResource>
+              <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
+            </webApp>
+            <loginServices>
+              <loginService implementation="org.eclipse.jetty.security.HashLoginService">
+                <name>${module}</name>
+                <config>${dollar}{basedir}/src/etc/dev-realm.properties</config>
+              </loginService>
+            </loginServices>
+          </configuration>
+        </plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
         <plugin>

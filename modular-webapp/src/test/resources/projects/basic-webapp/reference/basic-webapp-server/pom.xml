@@ -35,21 +35,23 @@
   </dependencies>
 
   <build>
-    <plugins>
-      <plugin>
-        <groupId>org.mortbay.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <configuration>
-          <scanIntervalSeconds>1</scanIntervalSeconds>
-          <webApp>
-            <contextPath>/${project.build.finalName}</contextPath>
-            <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-              <resourcesAsCSV>src/main/webapp,${basedir}/../basic-webapp-client/target/basic-webapp-client-${project.version}/</resourcesAsCSV>
-            </baseResource>
-            <extraClasspath>${basedir}/../basic-webapp-shared/target/classes/</extraClasspath>
-          </webApp>
-        </configuration>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <configuration>
+            <scanIntervalSeconds>1</scanIntervalSeconds>
+            <webApp>
+              <contextPath>/${project.build.finalName}</contextPath>
+              <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+                <resourcesAsCSV>src/main/webapp,${basedir}/../basic-webapp-client/target/basic-webapp-client-${project.version}/</resourcesAsCSV>
+              </baseResource>
+              <extraClasspath>${basedir}/../basic-webapp-shared/target/classes/</extraClasspath>
+            </webApp>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>
