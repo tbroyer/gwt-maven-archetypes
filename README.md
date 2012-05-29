@@ -23,7 +23,7 @@ where the available `<artifactIds>` are:
 
 * `modular-webapp`
 * `modular-requestfactory`
-*  `guice-rf-activities`
+* `guice-rf-activities`
 
 ### Start the development mode
 
@@ -66,3 +66,16 @@ browser in production mode, use `mvn package -Ddraft`. You can use `mvn package
 in your browser. Make sure you use a browser compatible with the one declared
 in the `${rootArtifactId}-client/src/main/java/${package}/${module}_dev.gwt.xml`
 file (by default, Safari or Chrome).
+
+Compatibility
+-------------
+
+To use variable interpolation in parameters during `mvn archetype:generate`,
+you need at least version 2.2 of the maven-archetype-plugin. Archetypes use
+`${module.toLowerCase()}` as the default value for the `module-short-name`
+parameter, so if you don't use version 2.2 or above of the
+maven-archetype-plugin, make sure you provide a value and do not use the
+default one for that parameter. You can also make sure you use version 2.2 of
+the plugin by using `mvn
+org.apache.maven.plugins:maven-archetype-plugin:2.2:generate` instead of `mvn
+archetype:generate`.
