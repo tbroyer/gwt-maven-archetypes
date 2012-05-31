@@ -10,6 +10,10 @@
 
   <artifactId>basic-rf-shared</artifactId>
 
+  <prerequisites>
+    <maven>${mavenVersion}</maven>
+  </prerequisites>
+
   <dependencies>
     <dependency>
       <groupId>com.google.web.bindery</groupId>

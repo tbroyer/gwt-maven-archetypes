@@ -26,6 +26,10 @@
   <artifactId>guice-rf-activities</artifactId>
   <packaging>maven-archetype</packaging>
 
+  <prerequisites>
+    <maven>${mavenVersion}</maven>
+  </prerequisites>
+
   <build>
     <extensions>
       <extension>

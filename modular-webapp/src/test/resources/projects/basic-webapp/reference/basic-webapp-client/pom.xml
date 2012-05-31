@@ -11,6 +11,10 @@
   <artifactId>basic-webapp-client</artifactId>
   <packaging>war</packaging>
 
+  <prerequisites>
+    <maven>${mavenVersion}</maven>
+  </prerequisites>
+
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>

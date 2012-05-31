@@ -7,8 +7,14 @@
   <version>0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <prerequisites>
+    <maven>${mavenVersion}</maven>
+  </prerequisites>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <mavenVersion>3.0</mavenVersion>
 
     <gwt.version>2.4.0</gwt.version>
 
