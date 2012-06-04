@@ -3,6 +3,8 @@ gwt-maven-archetypes
 
 This project contains Maven archetypes for modular GWT projects.
 
+[![Build Status](https://buildhive.cloudbees.com/job/tbroyer/job/gwt-maven-archetypes/badge/icon)](https://buildhive.cloudbees.com/job/tbroyer/job/gwt-maven-archetypes/)
+
 How to use
 ----------
 
