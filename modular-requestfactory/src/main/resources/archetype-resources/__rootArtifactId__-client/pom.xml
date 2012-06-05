@@ -34,6 +34,11 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
     </dependency>
+    <dependency>
+      <!-- FIXME: used to pull in RF dependencies; should no longer be necessary with GWT 2.5 onwards -->
+      <groupId>com.google.web.bindery</groupId>
+      <artifactId>requestfactory-client</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
