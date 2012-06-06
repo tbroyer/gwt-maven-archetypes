@@ -41,6 +41,7 @@
       <url-pattern>/*</url-pattern>
       <!-- there should be listed here explicitly, as they're used in other security-constraints -->
       <url-pattern>/gwtRequest</url-pattern>
+      <url-pattern>/favicon.ico</url-pattern>
       <url-pattern>/static/*</url-pattern>
       <url-pattern>/${module-short-name}/*</url-pattern>
     </web-resource-collection>
@@ -60,6 +61,7 @@
     <display-name>Unauthenticated access for images an CSS (for use in login.jsp)</display-name>
     <web-resource-collection>
       <web-resource-name />
+      <url-pattern>/favicon.ico</url-pattern>
       <url-pattern>/static/*</url-pattern>
       <url-pattern>/${module-short-name}/*</url-pattern>
       <http-method>GET</http-method>
