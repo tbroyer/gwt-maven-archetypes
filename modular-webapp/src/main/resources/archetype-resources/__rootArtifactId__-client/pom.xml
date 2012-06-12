@@ -41,42 +41,12 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>gwt-compile</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
           <modules>
             <module>${package}.${module}</module>
           </modules>
           <strict>true</strict>
-          <deploy>${dollar}{project.build.directory}/gwtc/extra</deploy>
-          <extra>${dollar}{project.build.directory}/gwtc/extra</extra>
-          <gen>${dollar}{project.build.directory}/gwtc/gen</gen>
-          <workDir>${dollar}{project.build.directory}/gwtc/work</workDir>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>${dollar}{gwt.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>${dollar}{gwt.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
-            <version>${dollar}{gwt.version}</version>
-          </dependency>
-        </dependencies>
       </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>

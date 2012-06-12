@@ -69,6 +69,38 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
           <version>${gwt-maven-plugin.version}</version>
+          <configuration>
+            <deploy>${project.build.directory}/gwtc/extra</deploy>
+            <extra>${project.build.directory}/gwtc/extra</extra>
+            <gen>${project.build.directory}/gwtc/gen</gen>
+            <workDir>${project.build.directory}/gwtc/work</workDir>
+          </configuration>
+          <executions>
+            <execution>
+              <id>gwt-compile</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+            </execution>
+          </executions>
+          <dependencies>
+            <dependency>
+              <groupId>com.google.gwt</groupId>
+              <artifactId>gwt-user</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>com.google.gwt</groupId>
+              <artifactId>gwt-dev</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>com.google.gwt</groupId>
+              <artifactId>gwt-servlet</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <artifactId>maven-source-plugin</artifactId>
