@@ -15,6 +15,14 @@
     <maven>${mavenVersion}</maven>
   </prerequisites>
 
+  <properties>
+    <gwt.module>it.pkg.Basic</gwt.module>
+    <gwt.draftCompile>false</gwt.draftCompile>
+    <gwt.style>OBF</gwt.style>
+    <!-- keep in sync with basic-rf-server -->
+    <runTarget>http://localhost:8080/</runTarget>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -46,10 +54,12 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <configuration>
-          <modules>
-            <module>it.pkg.Basic</module>
-          </modules>
+          <module>${gwt.module}</module>
           <strict>true</strict>
+          <draftCompile>${gwt.draftCompile}</draftCompile>
+          <style>${gwt.style}</style>
+          <noserver>true</noserver>
+          <runTarget>${runTarget}</runTarget>
         </configuration>
       </plugin>
       <plugin>
@@ -70,21 +80,11 @@
           <name>draft</name>
         </property>
       </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>gwt-maven-plugin</artifactId>
-            <configuration>
-              <modules>
-                <module>it.pkg.Basic_dev</module>
-              </modules>
-              <draftCompile>true</draftCompile>
-              <style>PRETTY</style>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
+      <properties>
+        <gwt.module>it.pkg.Basic_dev</gwt.module>
+        <gwt.draftCompile>true</gwt.draftCompile>
+        <gwt.style>PRETTY</gwt.style>
+      </properties>
     </profile>
     <profile>
       <id>dev</id>
@@ -94,6 +94,7 @@
         </property>
       </activation>
       <build>
+        <!-- FIXME: workaround for MGWT-332 -->
         <plugins>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
@@ -127,14 +128,6 @@
                 </configuration>
               </execution>
             </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>gwt-maven-plugin</artifactId>
-            <configuration>
-              <noServer>true</noServer>
-              <runTarget>http://localhost:8080/</runTarget>
-            </configuration>
           </plugin>
         </plugins>
       </build>
