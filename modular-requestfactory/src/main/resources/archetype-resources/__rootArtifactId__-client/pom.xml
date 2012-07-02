@@ -102,28 +102,18 @@
             <artifactId>build-helper-maven-plugin</artifactId>
             <executions>
               <execution>
-                <id>add-source</id>
-                <phase>generate-sources</phase>
-                <goals>
-                  <goal>add-source</goal>
-                </goals>
-                <configuration>
-                  <sources>
-                    <source>${dollar}{basedir}/../${rootArtifactId}-shared/src/main/java</source>
-                  </sources>
-                </configuration>
-              </execution>
-              <execution>
-                <id>add-resource</id>
-                <phase>generate-sources</phase>
+                <id>add-shared-sources-to-classpath</id>
+                <!-- After 'process-resources' so they're not copied to ${dollar}{project.build.outputDirectory} -->
+                <!-- But before 'compile' to make them available to 'gwt:run' -->
+                <phase>compile</phase>
                 <goals>
                   <goal>add-resource</goal>
                 </goals>
                 <configuration>
                   <resources>
+                    <!-- Only sources, resources are already in the classpath, by definition -->
                     <resource>
-                      <directory>${dollar}{basedir}/../${rootArtifactId}-shared/src/main/resources</directory>
-                      <targetPath>resources</targetPath>
+                      <directory>${dollar}{basedir}/../${rootArtifactId}-shared/src/main/java</directory>
                     </resource>
                   </resources>
                 </configuration>
