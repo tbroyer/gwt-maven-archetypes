@@ -12,7 +12,7 @@ In order to generate a modular GWT project from the available archetypes, first
 you need to clone and install this project locally:
 
     git clone https://github.com/tbroyer/gwt-maven-archetypes.git
-    cd gwt-maven-archetypes && maven clean install
+    cd gwt-maven-archetypes && mvn clean install
 
 ### Generate a project
 
