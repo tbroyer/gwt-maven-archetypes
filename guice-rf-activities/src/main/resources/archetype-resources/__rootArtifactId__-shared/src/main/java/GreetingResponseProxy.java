@@ -4,7 +4,7 @@ import com.google.web.bindery.requestfactory.shared.ProxyForName;
 import com.google.web.bindery.requestfactory.shared.ValueProxy;
 
 @ProxyForName("${package}.GreetingResponse")
-interface GreetingResponseProxy extends ValueProxy {
+public interface GreetingResponseProxy extends ValueProxy {
 	
 	boolean isSuccessful();
 
