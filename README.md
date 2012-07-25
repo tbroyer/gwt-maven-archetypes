@@ -14,6 +14,11 @@ you need to clone and install this project locally:
     git clone https://github.com/tbroyer/gwt-maven-archetypes.git
     cd gwt-maven-archetypes && mvn clean install
 
+Note that tests are sensitive to line endings, so if you're on Windows make sure
+your clone has Windows (CRLF) end of lines. In case it's not enough, you can simply
+delete the `src/test` folder thus bypassing tests (provided the tests pass on the
+continuous integration platform, it's not a big _risk_).
+
 ### Generate a project
 
     mvn archetype:generate \
