@@ -80,4 +80,6 @@ maven-archetype-plugin, make sure you provide a value and do not use the
 default one for that parameter. You can also make sure you use version 2.2 of
 the plugin by using `mvn
 org.apache.maven.plugins:maven-archetype-plugin:2.2:generate` instead of `mvn
-archetype:generate`.
+archetype:generate`. It should be noted that variable interpolation also does
+not work in M2Eclipse's wizard, despite using recent versions of Maven thus
+(probably) a recent-enough version of the maven-archetype-plugin.
