@@ -57,6 +57,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
+        <artifactId>guice-jndi</artifactId>
+        <version>${dollar}{guice.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-servlet</artifactId>
         <version>${dollar}{guice.version}</version>
       </dependency>

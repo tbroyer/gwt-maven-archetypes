@@ -7,6 +7,12 @@
     <listener-class>${package}.${module}ServletContextListener</listener-class>
   </listener>
 
+  <env-entry>
+    <env-entry-name>${module-short-name}/logoutUrl</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>logout.jsp</env-entry-value>
+  </env-entry>
+
   <filter>
     <filter-name>AjaxAuth</filter-name>
     <filter-class>${package}.AjaxAuthenticationFilter</filter-class>
@@ -42,6 +48,7 @@
       <!-- there should be listed here explicitly, as they're used in other security-constraints -->
       <url-pattern>/gwtRequest</url-pattern>
       <url-pattern>/favicon.ico</url-pattern>
+      <url-pattern>/logout.jsp</url-pattern>
       <url-pattern>/static/*</url-pattern>
       <url-pattern>/${module-short-name}/*</url-pattern>
     </web-resource-collection>
@@ -58,10 +65,11 @@
     </web-resource-collection>
   </security-constraint>
   <security-constraint>
-    <display-name>Unauthenticated access for images an CSS (for use in login.jsp)</display-name>
+    <display-name>Unauthenticated access for images and CSS (for use in login.html and logout.jsp)</display-name>
     <web-resource-collection>
       <web-resource-name />
       <url-pattern>/favicon.ico</url-pattern>
+      <url-pattern>/logout.jsp</url-pattern>
       <url-pattern>/static/*</url-pattern>
       <url-pattern>/${module-short-name}/*</url-pattern>
       <http-method>GET</http-method>

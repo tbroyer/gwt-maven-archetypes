@@ -66,6 +66,11 @@ public class ${module}GinModule extends AbstractGinModule {
 		return Scheduler.get();
 	}
 
+	@Provides @LogoutUrl
+	native String provideLogoutUrl() /*-{
+		return $wnd.logoutUrl != null ? String($wnd.logoutUrl) : null;
+	}-*/;
+
 	@Provides @CurrentUser @Singleton
 	User provideCurrentUser() {
 		final User.Factory factory = GWT.create(User.Factory.class);

@@ -2,10 +2,21 @@
 <%-- see http://turbomanage.wordpress.com/2009/12/11/how-to-inject-guice-objects-in-a-jsp/ --%>
 <%@ page import="com.google.inject.Guice" %>
 <%@ page import="com.google.inject.Injector" %>
+<%@ page import="com.google.inject.Key" %>
+<%@ page import="com.google.inject.name.Names" %>
 <%@ page import="${package}.ServerUser" %>
 <%
     Injector injector = (Injector) pageContext.getServletContext().getAttribute(Injector.class.getName());
     ServerUser user = injector.getInstance(ServerUser.class);
+    String logoutUrl = injector.getInstance(Key.get(String.class, Names.named("${module-short-name}.logoutUrl")));
+%>
+<%!
+    private String htmlEscape(String str) {
+        if (str == null) {
+            return null;
+        }
+        return str.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;");
+    }
 %>
 <!doctype html>
 <html>
@@ -32,6 +43,26 @@
         Your web browser must have JavaScript enabled in order for this application to display correctly.
       </div>
     </noscript>
+
+    <div id="user">
+      Signed in as <%= htmlEscape(user.getUserName()) %>
+<%
+    if (user.isAdmin()) {
+%>
+      (you're an administrator)
+<%
+    }
+
+    if (logoutUrl != null) {
+      logoutUrl = logoutUrl.trim();
+      if (!logoutUrl.isEmpty()) {
+%>
+      | <a href="<%= htmlEscape(logoutUrl) %>">Sign out</a>
+<%
+      }
+    }
+%>
+    </div>
 
     <%-- OPTIONAL: include this if you want history support in IE6 and IE7 --%>
     <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>

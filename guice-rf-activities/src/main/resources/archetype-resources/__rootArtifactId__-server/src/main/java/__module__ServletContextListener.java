@@ -1,11 +1,17 @@
 package ${package};
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 
+import com.google.common.base.Throwables;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Provides;
+import com.google.inject.jndi.JndiIntegration;
+import com.google.inject.name.Names;
 import com.google.inject.servlet.GuiceServletContextListener;
 import com.google.inject.servlet.ServletModule;
 import com.google.inject.servlet.RequestScoped;
@@ -16,12 +22,24 @@ public class ${module}ServletContextListener extends GuiceServletContextListener
 
 	@Override
 	protected Injector getInjector() {
+		final Context ctx;
+		try {
+			InitialContext ic = new InitialContext();
+			ctx = (Context) ic.lookup("java:comp/env");
+		} catch (NamingException ne) {
+			throw Throwables.propagate(ne);
+		}
+
 		return Guice.createInjector(new ServletModule() {
 			@Override
 			protected void configureServlets() {
 				serve("/gwtRequest").with(GuiceRequestFactoryServlet.class);
 
 				bind(ExceptionHandler.class).to(DefaultExceptionHandler.class);
+
+				bind(Context.class).toInstance(ctx);
+				bind(String.class).annotatedWith(Names.named("${module-short-name}/logoutUrl")).toProvider(
+						JndiIntegration.fromJndi(String.class, "${module-short-name}/logoutUrl"));
 
 				bind(User.class).annotatedWith(CurrentUser.class).to(ServerUser.class);
 			}
