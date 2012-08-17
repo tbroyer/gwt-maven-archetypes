@@ -1,4 +1,12 @@
 <%@ page session="false" contentType="text/html;charset=utf-8" %>
+<%-- see http://turbomanage.wordpress.com/2009/12/11/how-to-inject-guice-objects-in-a-jsp/ --%>
+<%@ page import="com.google.inject.Guice" %>
+<%@ page import="com.google.inject.Injector" %>
+<%@ page import="${package}.ServerUser" %>
+<%
+    Injector injector = (Injector) pageContext.getServletContext().getAttribute(Injector.class.getName());
+    ServerUser user = injector.getInstance(ServerUser.class);
+%>
 <!doctype html>
 <html>
   <head>
@@ -25,15 +33,14 @@
       </div>
     </noscript>
 
-    <script>
-        var user = '<%= request.getRemoteUser()  %>';
-        var admin = <%= request.isUserInRole("admin") ? "true" : "false" %>;
-    </script>
     <%-- OPTIONAL: include this if you want history support in IE6 and IE7 --%>
     <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
 
     <script>
-        <%@ include file="${module-short-name}/${module-short-name}.nocache.js" %>
+      <%-- see http://blog.alexmaccaw.com/a-javascript-security-flaw for the replace() rationale --%>
+      var user = <%= user.toJson().replace("</", "<\\/") %>;
+
+      <%@ include file="${module-short-name}/${module-short-name}.nocache.js" %>
     </script>
   </body>
 </html>

@@ -22,6 +22,8 @@ public class ${module}ServletContextListener extends GuiceServletContextListener
 				serve("/gwtRequest").with(GuiceRequestFactoryServlet.class);
 
 				bind(ExceptionHandler.class).to(DefaultExceptionHandler.class);
+
+				bind(User.class).annotatedWith(CurrentUser.class).to(ServerUser.class);
 			}
 
 			@Provides @CurrentUser @RequestScoped

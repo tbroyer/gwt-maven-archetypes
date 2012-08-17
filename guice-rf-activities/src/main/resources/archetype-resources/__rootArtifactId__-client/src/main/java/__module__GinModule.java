@@ -1,20 +1,25 @@
 package ${package};
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.inject.client.assistedinject.GinFactoryModuleBuilder;
+import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.place.shared.PlaceHistoryHandler.DefaultHistorian;
 import com.google.gwt.place.shared.PlaceHistoryHandler.Historian;
 import com.google.gwt.place.shared.PlaceHistoryMapper;
+import com.google.inject.Provides;
+import com.google.inject.Singleton;
+import com.google.web.bindery.autobean.gwt.client.impl.JsoSplittable;
+import com.google.web.bindery.autobean.shared.AutoBean;
+import com.google.web.bindery.autobean.shared.AutoBeanCodex;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.requestfactory.shared.RequestTransport;
-import com.google.inject.Provides;
-import com.google.inject.Singleton;
 
 public class ${module}GinModule extends AbstractGinModule {
 
@@ -61,13 +66,32 @@ public class ${module}GinModule extends AbstractGinModule {
 		return Scheduler.get();
 	}
 
-        @Provides @CurrentUser
-        native String provideCurrentUser() /*-{
-          return String($wnd.user);
-        }-*/;
+	@Provides @CurrentUser @Singleton
+	User provideCurrentUser() {
+		final User.Factory factory = GWT.create(User.Factory.class);
+		final JavaScriptObject nativeUser = getNativeUser();
+		final AutoBean<User> user;
+		if (GWT.isScript()) {
+			user = AutoBeanCodex.decode(factory, User.class, (JsoSplittable) nativeUser);
+		} else {
+			// JsoSplittable is a @GwtScriptOnly, so we need this hack in devMode
+			final String payload = new JSONObject(nativeUser).toString();
+			user = AutoBeanCodex.decode(factory, User.class, payload);
+		}
+		return user.as();
+	}
 
-        @Provides @IsAdmin
-        native boolean provideIsAdmin() /*-{
-          return !!$wnd.admin;
-        }-*/;
+	@Provides @CurrentUser
+	String provideUserName(@CurrentUser User user) {
+		return user.getUserName();
+	}
+
+	@Provides @IsAdmin
+	boolean provideIsAdmin(@CurrentUser User user) {
+		return user.isAdmin();
+	}
+
+	private native JavaScriptObject getNativeUser() /*-{
+		return $wnd.user;
+	}-*/;
 }
