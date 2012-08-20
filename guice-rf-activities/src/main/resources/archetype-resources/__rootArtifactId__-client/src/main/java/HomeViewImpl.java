@@ -30,6 +30,11 @@ public class HomeViewImpl implements HomeView {
 	@UiField Label   errorLabel;
 
 	@Override
+	public void setUserName(String userName) {
+		nameField.setText(userName);
+	}
+
+	@Override
 	public void setEnabled(boolean enabled) {
 		sendButton.setEnabled(enabled);
 	}

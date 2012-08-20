@@ -11,6 +11,8 @@ public interface HomeView extends IsWidget {
 		void sendNameToServer(String name);
 	}
 
+	void setUserName(String userName);
+
 	void setEnabled(boolean enabled);
 
 	void setError(String error);

@@ -8,7 +8,7 @@
         <td colspan="2" style="font-weight:bold;">Please enter your name:</td>        
       </tr>
       <tr>
-        <td><g:TextBox ui:field="nameField">GWT User</g:TextBox></td>
+        <td><g:TextBox ui:field="nameField" /></td>
         <td><g:Button ui:field="sendButton" addStyleNames="sendButton">Send</g:Button></td>
       </tr>
       <tr>

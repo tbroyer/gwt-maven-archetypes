@@ -9,11 +9,13 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 
 	private final HomeView view;
 	private final PlaceController placeController;
+	private final String userName;
 
 	@Inject
-	HomeActivity(HomeView view, PlaceController placeController) {
+	HomeActivity(HomeView view, PlaceController placeController, @CurrentUser String userName) {
 		this.view = view;
 		this.placeController = placeController;
+		this.userName = userName;
 	}
 
 	@Override
@@ -21,6 +23,7 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 			@SuppressWarnings("deprecation") com.google.gwt.event.shared.EventBus eventBus) {
 		view.setPresenter(this);
 		view.setEnabled(true);
+		view.setUserName(userName);
 		panel.setWidget(view);
 	}
 
