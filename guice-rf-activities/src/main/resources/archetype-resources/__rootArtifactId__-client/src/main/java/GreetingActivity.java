@@ -40,8 +40,7 @@ public class GreetingActivity extends AbstractActivity implements GreetingView.P
 	}
 
 	@Override
-	public void start(final AcceptsOneWidget panel,
-			@SuppressWarnings("deprecation") com.google.gwt.event.shared.EventBus eventBus) {
+	public void start(final AcceptsOneWidget panel, com.google.gwt.event.shared.EventBus eventBus) {
 		cancelled = false;
 
 		view.setPresenter(this);

@@ -19,8 +19,7 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 	}
 
 	@Override
-	public void start(AcceptsOneWidget panel,
-			@SuppressWarnings("deprecation") com.google.gwt.event.shared.EventBus eventBus) {
+	public void start(AcceptsOneWidget panel, com.google.gwt.event.shared.EventBus eventBus) {
 		view.setPresenter(this);
 		view.setEnabled(true);
 		view.setUserName(userName);
