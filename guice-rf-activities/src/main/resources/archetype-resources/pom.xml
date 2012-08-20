@@ -57,6 +57,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
+        <artifactId>guice-assistedinject</artifactId>
+        <version>${dollar}{guice.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-jndi</artifactId>
         <version>${dollar}{guice.version}</version>
       </dependency>
@@ -70,6 +75,13 @@
         <artifactId>gin</artifactId>
         <version>${dollar}{gin.version}</version>
         <scope>provided</scope>
+        <exclusions>
+          <!-- GIN erroneously depends on gwt-servlet, let's not a risk a version conflict -->
+          <exclusion>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>

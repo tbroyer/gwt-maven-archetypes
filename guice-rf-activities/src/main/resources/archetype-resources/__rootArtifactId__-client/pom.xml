@@ -52,6 +52,11 @@
       <artifactId>guice</artifactId>
     </dependency>
     <dependency>
+      <!-- GIN depends on guice-assistedinject:3.0-RC2, let's not risk a version conflict -->
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-assistedinject</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.gwt.inject</groupId>
       <artifactId>gin</artifactId>
     </dependency>
