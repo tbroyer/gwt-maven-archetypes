@@ -19,6 +19,7 @@
     <gwt.module>it.pkg.Basic</gwt.module>
     <gwt.draftCompile>false</gwt.draftCompile>
     <gwt.style>OBF</gwt.style>
+    <gwt.genParam>false</gwt.genParam>
     <!-- keep in sync with basic-rf-server -->
     <runTarget>http://localhost:8080/</runTarget>
   </properties>
@@ -53,6 +54,7 @@
           <strict>true</strict>
           <draftCompile>${gwt.draftCompile}</draftCompile>
           <style>${gwt.style}</style>
+          <genParam>${gwt.genParam}</genParam>
           <noserver>true</noserver>
           <runTarget>${runTarget}</runTarget>
         </configuration>

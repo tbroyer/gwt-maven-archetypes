@@ -20,6 +20,7 @@
     <gwt.module>${package}.${module}</gwt.module>
     <gwt.draftCompile>false</gwt.draftCompile>
     <gwt.style>OBF</gwt.style>
+    <gwt.genParam>false</gwt.genParam>
     <!-- keep in sync with ${rootArtifactId}-server -->
     <runTarget>http://localhost:8080/</runTarget>
   </properties>
@@ -66,6 +67,7 @@
           <strict>true</strict>
           <draftCompile>${dollar}{gwt.draftCompile}</draftCompile>
           <style>${dollar}{gwt.style}</style>
+          <genParam>${dollar}{gwt.genParam}</genParam>
           <noserver>true</noserver>
           <runTarget>${dollar}{runTarget}</runTarget>
         </configuration>
