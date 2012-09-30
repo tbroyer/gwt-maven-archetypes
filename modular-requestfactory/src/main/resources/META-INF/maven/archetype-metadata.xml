@@ -76,6 +76,12 @@
             <include>**/*.css</include>
           </includes>
         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/tomcatconf</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
       </fileSets>
     </module>
   </modules>

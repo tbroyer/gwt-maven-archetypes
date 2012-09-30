@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true">
+
+  <!-- FIXME: workaround for https://issues.apache.org/jira/browse/MTOMCAT-158 -->
+  <Resources className="org.apache.naming.resources.VirtualDirContext"
+    extraResourcePaths="/basic=${basedir}/../basic-rf-client/target/basic-rf-client-${project.version}/basic/" />
+</Context>
