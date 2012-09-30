@@ -8,20 +8,10 @@ This project contains Maven archetypes for modular GWT projects.
 How to use
 ----------
 
-In order to generate a modular GWT project from the available archetypes, first
-you need to clone and install this project locally:
-
-    git clone https://github.com/tbroyer/gwt-maven-archetypes.git
-    cd gwt-maven-archetypes && mvn clean install
-
-Note that tests are sensitive to line endings, so if you're on Windows make sure
-your clone has Windows (CRLF) end of lines. In case it's not enough, you can simply
-delete the `src/test` folder thus bypassing tests (provided the tests pass on the
-continuous integration platform, it's not a big _risk_).
-
 ### Generate a project
 
     mvn archetype:generate \
+       -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/ \
        -DarchetypeGroupId=net.ltgt.gwt.archetypes \
        -DarchetypeArtifactId=<artifactId> \
        -DarchetypeVersion=1.0-SNAPSHOT
@@ -31,6 +21,22 @@ where the available `<artifactIds>` are:
 * `modular-webapp`
 * `modular-requestfactory`
 * `guice-rf-activities`
+
+This uses the snapshot deployed to Sonatype OSS. Alternatively, and/or if you want to
+hack on / contribute to the archetypes, you can clone and install the project locally:
+
+    git clone https://github.com/tbroyer/gwt-maven-archetypes.git
+    cd gwt-maven-archetypes && mvn clean install
+
+You'll then use the `mvn archetype:generate` command from above, except for the
+`-DarchetypeCatalog` argument which you'll remove, as you now want to use your local
+catalog.
+
+Note that tests are sensitive to line endings, so if you're on Windows make sure
+your clone has Windows (CRLF) end of lines. In case it's not enough, you can simply
+delete the `src/test` folder thus bypassing tests (provided the tests pass on the
+continuous integration platform, it's not a big _risk_).
+
 
 ### Start the development mode
 
