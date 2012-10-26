@@ -67,13 +67,6 @@
         <artifactId>gin</artifactId>
         <version>${dollar}{gin.version}</version>
         <scope>provided</scope>
-        <exclusions>
-          <!-- GIN erroneously depends on gwt-servlet, let's not a risk a version conflict -->
-          <exclusion>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
