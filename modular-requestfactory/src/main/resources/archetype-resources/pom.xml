@@ -82,7 +82,9 @@
             <deploy>${dollar}{project.build.directory}/gwtc/extra</deploy>
             <extra>${dollar}{project.build.directory}/gwtc/extra</extra>
             <gen>${dollar}{project.build.directory}/gwtc/gen</gen>
+            <!-- There's an issue on Mac: see http://code.google.com/p/google-web-toolkit/issues/detail?id=7474
             <workDir>${dollar}{project.build.directory}/gwtc/work</workDir>
+            -->
           </configuration>
           <executions>
             <execution>
