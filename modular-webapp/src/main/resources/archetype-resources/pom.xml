@@ -73,6 +73,7 @@
             <gen>${dollar}{project.build.directory}/gwtc/gen</gen>
             <!-- There's an issue on Mac: see http://code.google.com/p/google-web-toolkit/issues/detail?id=7474
             <workDir>${dollar}{project.build.directory}/gwtc/work</workDir>
+            <codeServerWorkDir>${dollar}{project.build.directory}/gwtc/superDevMode</codeServerWorkDir>
             -->
           </configuration>
           <executions>
