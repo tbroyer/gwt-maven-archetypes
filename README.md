@@ -42,7 +42,7 @@ continuous integration platform, it's not a big _risk_).
 
 Change directory to your generated project and issue the following commands:
 
-1. `mvn clean package -Dgwt.compiler.skip`
+1. `mvn clean install -Dgwt.compiler.skip`
 2. In one terminal window: `cd *-client && mvn gwt:run -Ddev`
 3. In another terminal window: `mvn tomcat7:run -Ddev`
 
@@ -53,6 +53,10 @@ Or if you'd rather use Jetty than Tomcat:
 1. `mvn clean install -Dgwt.compiler.skip`
 2. In one terminal window: `cd *-server && mvn jetty:start -Ddev`
 3. In another terminal window: `cd *-client && mvn gwt:run -Ddev`
+
+Note that you only need to `install` once so that `gwt:run` and `jetty:start`
+can find the other modules. This is currently needed because neither `gwt:run`
+nor `jetty:start` support running in reactor builds, contrary to `tomcat7:run`.
 
 ### Profiles
 
