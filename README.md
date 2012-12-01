@@ -64,14 +64,11 @@ There are two profiles defined in the POM file of client module:
 
 * `dev` is to speed-up development with `gwt:run` and `jetty:start` by not
   requiring a restart when a change to the `${rootArtifactId}-shared` is made
-* `draft` is to speed-up GWT compilation, and will only compile (by default)
-  for WebKit-based browsers (Safari, Chrome)
+* `draft` is to disable optimisations so GWT compilation is faster and
+  produces readable (non-obfuscated) JavaScript.
 
 To activate `dev` or `draft` you can provide the `-Ddev` or `-Ddraft` system
 properties respectively, or use `-Pdev` or `-Pdraft`.
-
-Note that the DevMode (`gwt:run`) won't work after a compilation made with the
-`draft` profile. You'll have to `mvn clean` the project first and start over.
 
 ### Productivity tips
 
@@ -88,10 +85,7 @@ When working on the client-side code exclusively, to quickly test it in a
 browser in production mode, use `mvn package -Ddraft`. You can use `mvn package
 -Ddraft -pl :${rootArtifactId}-client -am` while the Tomcat or Jetty server is
 running (launched by `mvn tomcat7:run` or `cd *-server && mvn jetty:start -Ddev`),
-and then simply hit `F5` in your browser. Make sure you use a browser compatible
-with the one declared in the
-`${rootArtifactId}-client/src/main/java/${package}/${module}_dev.gwt.xml` file
-(by default, Safari or Chrome).
+and then simply hit `F5` in your browser.
 
 Compatibility
 -------------

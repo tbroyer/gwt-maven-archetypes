@@ -2,7 +2,5 @@
 <module rename-to="basic">
   <inherits name="it.pkg.Basic" />
 
-  <set-property name="user.agent" value="safari" />
-
   <set-configuration-property name="devModeRedirectEnabled" value="true" />
 </module>

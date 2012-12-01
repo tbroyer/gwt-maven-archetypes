@@ -2,7 +2,5 @@
 <module rename-to="${module-short-name}">
   <inherits name="${package}.${module}" />
 
-  <set-property name="user.agent" value="safari" />
-
   <set-configuration-property name="devModeRedirectEnabled" value="true" />
 </module>
