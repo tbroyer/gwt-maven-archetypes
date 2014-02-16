@@ -17,7 +17,6 @@
   </prerequisites>
 
   <properties>
-    <gwt.module>${package}.${module}</gwt.module>
     <gwt.draftCompile>false</gwt.draftCompile>
     <gwt.style>OBF</gwt.style>
     <gwt.genParam>false</gwt.genParam>
@@ -51,7 +50,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <configuration>
-          <module>${dollar}{gwt.module}</module>
+          <module>${package}.${module}</module>
           <strict>true</strict>
           <draftCompile>${dollar}{gwt.draftCompile}</draftCompile>
           <style>${dollar}{gwt.style}</style>
@@ -97,7 +96,6 @@
         </property>
       </activation>
       <properties>
-        <gwt.module>${package}.${module}_dev</gwt.module>
         <gwt.draftCompile>true</gwt.draftCompile>
         <gwt.style>PRETTY</gwt.style>
       </properties>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module rename-to="basic">
-  <inherits name="it.pkg.Basic" />
-</module>
