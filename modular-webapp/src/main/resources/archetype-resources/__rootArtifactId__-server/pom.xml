@@ -61,6 +61,12 @@
                   </baseResource>
                   <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
                 </webApp>
+                <systemProperties>
+                  <systemProperty>
+                    <name>gwt.codeserver.port</name>
+                    <value>9876</value>
+                  </systemProperty>
+                </systemProperties>
               </configuration>
             </plugin>
             <plugin>
@@ -71,6 +77,9 @@
                 <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
                 <path>/</path>
                 <uriEncoding>UTF-8</uriEncoding>
+                <systemProperties>
+                  <gwt.codeserver.port>9876</gwt.codeserver.port>
+                </systemProperties>
               </configuration>
             </plugin>
             <plugin>
@@ -81,6 +90,9 @@
                 <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
                 <path>/</path>
                 <uriEncoding>UTF-8</uriEncoding>
+                <systemProperties>
+                  <gwt.codeserver.port>9876</gwt.codeserver.port>
+                </systemProperties>
               </configuration>
             </plugin>
           </plugins>
