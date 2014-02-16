@@ -87,7 +87,7 @@ code, particularly when using GWT-RPC).
 When working on the client-side code exclusively, to quickly test it in a
 browser in production mode, use `mvn package -Ddraft`. You can use `mvn package
 -Ddraft -pl :${rootArtifactId}-client -am` while the Tomcat or Jetty server is
-running (launched by \mvn tomcat7:run` or `cd *-server && mvn jetty:start -Ddev`),
+running (launched by `mvn tomcat7:run` or `cd *-server && mvn jetty:start -Ddev`),
 and then simply hit `F5` in your browser. Make sure you use a browser compatible
 with the one declared in the
 `${rootArtifactId}-client/src/main/java/${package}/${module}_dev.gwt.xml` file
