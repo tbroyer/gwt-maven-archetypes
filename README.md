@@ -38,25 +38,37 @@ delete the `src/test` folder thus bypassing tests (provided the tests pass on th
 continuous integration platform, it's not a big _risk_).
 
 
-### Start the development mode
+### Use SuperDevMode
 
 Change directory to your generated project and issue the following commands:
+
+1. `mvn clean install -Ddraft`
+2. In one terminal window: `cd *-client && mvn process-classes gwt:run-codeserver -Ddev`
+3. In another terminal window: `mvn tomcat7:run -Ddev`
+
+The same is available with `tomcat6` instead of `tomcat7`.
+
+Or if you'd rather use Jetty than Tomcat, use `cd *-server && mvn jetty:start -Ddev` instead of `mvn tomcat7:run`.
+
+Note that you only need to `install` once so that `gwt:run-codeserver` and `jetty:start`
+can find the other modules. This is currently needed because neither `gwt:run`
+nor `jetty:start` support running in reactor builds, contrary to `tomcat7:run`.
+
+
+### Start the development mode
+
+This is similar to using SuperDevMode, except you can use `-Dgwt.compiler.skip`
+instead of `-Ddraft` to speed up the first step (it only has to be done once though
+so it's probably no big deal), and more importantly you'll use `mvn gwt:run`
+instead of `mvn process-classes gwt:run-codeserver` (`process-classes` is only needed
+because of a bug in the `gwt-maven-plugin` up until version 2.6.0).
+
+Steps therefore become:
 
 1. `mvn clean install -Dgwt.compiler.skip`
 2. In one terminal window: `cd *-client && mvn gwt:run -Ddev`
 3. In another terminal window: `mvn tomcat7:run -Ddev`
 
-The same is available with `tomcat6` instead of `tomcat7`.
-
-Or if you'd rather use Jetty than Tomcat:
-
-1. `mvn clean install -Dgwt.compiler.skip`
-2. In one terminal window: `cd *-server && mvn jetty:start -Ddev`
-3. In another terminal window: `cd *-client && mvn gwt:run -Ddev`
-
-Note that you only need to `install` once so that `gwt:run` and `jetty:start`
-can find the other modules. This is currently needed because neither `gwt:run`
-nor `jetty:start` support running in reactor builds, contrary to `tomcat7:run`.
 
 ### Profiles
 
