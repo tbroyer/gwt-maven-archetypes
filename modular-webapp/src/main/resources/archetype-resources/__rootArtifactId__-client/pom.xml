@@ -17,8 +17,6 @@
   </prerequisites>
 
   <properties>
-    <gwt.draftCompile>false</gwt.draftCompile>
-    <gwt.style>OBF</gwt.style>
     <gwt.genParam>false</gwt.genParam>
     <!-- keep in sync with ${rootArtifactId}-server -->
     <runTarget>http://localhost:8080/</runTarget>
@@ -52,8 +50,6 @@
         <configuration>
           <module>${package}.${module}</module>
           <strict>true</strict>
-          <draftCompile>${dollar}{gwt.draftCompile}</draftCompile>
-          <style>${dollar}{gwt.style}</style>
           <genParam>${dollar}{gwt.genParam}</genParam>
           <noserver>true</noserver>
           <runTarget>${dollar}{runTarget}</runTarget>
@@ -88,18 +84,6 @@
   </build>
 
   <profiles>
-    <profile>
-      <id>draft</id>
-      <activation>
-        <property>
-          <name>draft</name>
-        </property>
-      </activation>
-      <properties>
-        <gwt.draftCompile>true</gwt.draftCompile>
-        <gwt.style>PRETTY</gwt.style>
-      </properties>
-    </profile>
     <profile>
       <id>dev</id>
       <activation>

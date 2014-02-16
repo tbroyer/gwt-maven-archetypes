@@ -16,8 +16,6 @@
   </prerequisites>
 
   <properties>
-    <gwt.draftCompile>false</gwt.draftCompile>
-    <gwt.style>OBF</gwt.style>
     <gwt.genParam>false</gwt.genParam>
     <!-- keep in sync with basic-rf-server -->
     <runTarget>http://localhost:8080/</runTarget>
@@ -51,8 +49,6 @@
         <configuration>
           <module>it.pkg.Basic</module>
           <strict>true</strict>
-          <draftCompile>${gwt.draftCompile}</draftCompile>
-          <style>${gwt.style}</style>
           <genParam>${gwt.genParam}</genParam>
           <noserver>true</noserver>
           <runTarget>${runTarget}</runTarget>
@@ -87,18 +83,6 @@
   </build>
 
   <profiles>
-    <profile>
-      <id>draft</id>
-      <activation>
-        <property>
-          <name>draft</name>
-        </property>
-      </activation>
-      <properties>
-        <gwt.draftCompile>true</gwt.draftCompile>
-        <gwt.style>PRETTY</gwt.style>
-      </properties>
-    </profile>
     <profile>
       <id>dev</id>
       <activation>
