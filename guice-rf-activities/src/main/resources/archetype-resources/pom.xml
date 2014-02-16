@@ -18,7 +18,7 @@
     <mavenVersion>3.0</mavenVersion>
 
     <gwt.version>2.6.0</gwt.version>
-    <guice.version>3.0</guice.version>
+    <guice.version>4.0-beta</guice.version>
     <gin.version>2.1.2</gin.version>
     <guava.version>16.0.1</guava.version>
   </properties>
@@ -50,6 +50,12 @@
       <dependency>
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
+        <version>${dollar}{guice.version}</version>
+      </dependency>
+      <!-- Needed by google-gin, version must match Guice -->
+      <dependency>
+        <groupId>com.google.inject.extensions</groupId>
+        <artifactId>guice-assistedinject</artifactId>
         <version>${dollar}{guice.version}</version>
       </dependency>
       <dependency>
