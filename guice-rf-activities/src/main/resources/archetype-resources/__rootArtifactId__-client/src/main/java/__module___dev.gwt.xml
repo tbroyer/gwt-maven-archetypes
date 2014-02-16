@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to="${module-short-name}">
   <inherits name="${package}.${module}" />
-
-  <set-configuration-property name="devModeRedirectEnabled" value="true" />
 </module>
