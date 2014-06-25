@@ -18,9 +18,9 @@
     <mavenVersion>3.0</mavenVersion>
 
     <gwt.version>2.6.0</gwt.version>
-    <guice.version>4.0-beta</guice.version>
+    <guice.version>4.0-beta4</guice.version>
     <gin.version>2.1.2</gin.version>
-    <guava.version>16.0.1</guava.version>
+    <guava.version>17.0</guava.version>
   </properties>
 
   <dependencyManagement>
@@ -113,7 +113,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.1.2.v20140210</version>
+          <version>9.2.1.v20140609</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>

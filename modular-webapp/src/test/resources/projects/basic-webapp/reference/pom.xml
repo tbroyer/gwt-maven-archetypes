@@ -60,7 +60,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.1.2.v20140210</version>
+          <version>9.2.1.v20140609</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
