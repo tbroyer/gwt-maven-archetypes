@@ -43,7 +43,7 @@ continuous integration platform, it's not a big _risk_).
 Change directory to your generated project and issue the following commands:
 
 1. `mvn clean install -Dgwt.draftCompile`
-2. In one terminal window: `cd *-client && mvn process-classes gwt:run-codeserver -Ddev`
+2. In one terminal window: `cd *-client && mvn gwt:run-codeserver -Ddev`
 3. In another terminal window: `mvn tomcat7:run -Ddev`
 
 The same is available with `tomcat6` instead of `tomcat7`.
@@ -62,8 +62,7 @@ GWT compilation by disabling optimizations.
 This is similar to using SuperDevMode, except you can use `-Dgwt.compiler.skip`
 instead of `-Dgwt.draftCompile` to speed up the first step (it only has to be done once
 though so it's probably no big deal), and more importantly you'll use `mvn gwt:run`
-instead of `mvn process-classes gwt:run-codeserver` (`process-classes` is only needed
-because of a bug in the `gwt-maven-plugin` up until version 2.6.0).
+instead of `mvn gwt:run-codeserver`.
 
 Steps therefore become:
 

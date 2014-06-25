@@ -17,7 +17,7 @@
 
     <mavenVersion>3.0</mavenVersion>
 
-    <gwt.version>2.6.0</gwt.version>
+    <gwt.version>2.6.1</gwt.version>
     <guice.version>4.0-beta4</guice.version>
     <gin.version>2.1.2</gin.version>
     <guava.version>17.0</guava.version>
@@ -118,7 +118,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
-          <version>2.6.0</version>
+          <version>2.6.1</version>
           <configuration>
             <deploy>${dollar}{project.build.directory}/gwtc/extra</deploy>
             <extra>${dollar}{project.build.directory}/gwtc/extra</extra>
