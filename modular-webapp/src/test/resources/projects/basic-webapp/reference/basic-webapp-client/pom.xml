@@ -22,6 +22,7 @@
   </properties>
 
   <dependencies>
+    <!-- XXX: use scope=provided for all dependencies to avoid copying them into WEB-INF/lib -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>basic-webapp-shared</artifactId>
@@ -38,6 +39,7 @@
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 

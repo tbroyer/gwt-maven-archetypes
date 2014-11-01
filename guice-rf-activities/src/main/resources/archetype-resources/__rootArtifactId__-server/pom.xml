@@ -32,6 +32,8 @@
     <dependency>
       <groupId>com.google.web.bindery</groupId>
       <artifactId>requestfactory-apt</artifactId>
+      <!-- This is an annotation processor, it's only needed at compile-time -->
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.google.web.bindery</groupId>
