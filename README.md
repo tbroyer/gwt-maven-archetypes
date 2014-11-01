@@ -3,8 +3,6 @@ gwt-maven-archetypes
 
 This project contains Maven archetypes for modular GWT projects.
 
-[![Build Status](https://secure.travis-ci.org/tbroyer/gwt-maven-archetypes.png?branch=master)](http://travis-ci.org/tbroyer/gwt-maven-archetypes)
-
 How to use
 ----------
 
