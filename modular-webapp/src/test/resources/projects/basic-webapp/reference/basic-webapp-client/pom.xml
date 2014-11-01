@@ -101,19 +101,19 @@
             <executions>
               <execution>
                 <id>add-shared-sources-to-classpath</id>
-                <!-- After 'process-resources' so they're not copied to ${project.build.outputDirectory} -->
-                <!-- But before 'compile' to make them available to 'gwt:run' -->
-                <phase>compile</phase>
+                <!-- After 'compile' so they're not compiled to ${project.build.outputDirectory} -->
+                <!-- But before 'process-classes' to make them available to 'gwt:run' -->
+                <!-- Use add-source because gwt-maven-plugin adds sources to the classpath, not resources. -->
+                <phase>process-classes</phase>
                 <goals>
-                  <goal>add-resource</goal>
+                  <goal>add-source</goal>
                 </goals>
                 <configuration>
-                  <resources>
-                    <!-- Only sources, resources are already in the classpath, by definition -->
-                    <resource>
-                      <directory>${basedir}/../basic-webapp-shared/src/main/java</directory>
-                    </resource>
-                  </resources>
+                  <sources>
+                    <!-- Only sources, resources come from target/classes (to support filtering) -->
+                    <source>${basedir}/../basic-webapp-shared/src/main/java</source>
+                    <source>${basedir}/../basic-webapp-shared/target/classes</source>
+                  </sources>
                 </configuration>
               </execution>
             </executions>
