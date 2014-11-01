@@ -8,7 +8,7 @@
 <%
     Injector injector = (Injector) pageContext.getServletContext().getAttribute(Injector.class.getName());
     ServerUser user = injector.getInstance(ServerUser.class);
-    String logoutUrl = injector.getInstance(Key.get(String.class, Names.named("${module-short-name}.logoutUrl")));
+    String logoutUrl = injector.getInstance(Key.get(String.class, Names.named("${module-short-name}/logoutUrl")));
 %>
 <%!
     private String htmlEscape(String str) {
