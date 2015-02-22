@@ -6,8 +6,6 @@
 
   <source path="" />
 
-  <add-linker name="xsiframe" />
-
   <entry-point class="it.pkg.Basic" />
 
   <!-- Only support recent browsers -->

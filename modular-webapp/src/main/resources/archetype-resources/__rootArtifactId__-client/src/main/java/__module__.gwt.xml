@@ -5,8 +5,6 @@
 
   <source path="" />
 
-  <add-linker name="xsiframe" />
-
   <entry-point class="${package}.${module}" />
 
   <!-- Only support recent browsers -->
