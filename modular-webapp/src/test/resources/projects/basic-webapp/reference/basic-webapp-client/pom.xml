@@ -50,7 +50,6 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <configuration>
           <module>it.pkg.Basic</module>
-          <strict>true</strict>
           <genParam>${gwt.genParam}</genParam>
           <noserver>true</noserver>
           <runTarget>${runTarget}</runTarget>

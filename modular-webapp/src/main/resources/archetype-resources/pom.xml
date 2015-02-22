@@ -70,6 +70,7 @@
             <codeServerWorkDir>${dollar}{project.build.directory}/gwtc/superDevMode</codeServerWorkDir>
             -->
             <sourceLevel>1.7</sourceLevel>
+            <failOnError>true</failOnError>
           </configuration>
           <executions>
             <execution>
