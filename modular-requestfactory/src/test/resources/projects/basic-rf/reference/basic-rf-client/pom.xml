@@ -9,116 +9,49 @@
   </parent>
 
   <artifactId>basic-rf-client</artifactId>
-  <packaging>war</packaging>
+  <packaging>gwt-app</packaging>
 
   <prerequisites>
     <maven>${mavenVersion}</maven>
   </prerequisites>
 
-  <properties>
-    <gwt.genParam>false</gwt.genParam>
-    <!-- keep in sync with basic-rf-server -->
-    <runTarget>http://localhost:8080/</runTarget>
-  </properties>
-
   <dependencies>
-    <!-- XXX: use scope=provided for all dependencies to avoid copying them into WEB-INF/lib -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>basic-rf-shared</artifactId>
       <version>${project.version}</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>basic-rf-shared</artifactId>
       <version>${project.version}</version>
+      <!-- NOTE: we don't use type=java-source here to avoid copying sources; this is because we're in a gwt-app -->
       <classifier>sources</classifier>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
-      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-dev</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-codeserver</artifactId>
     </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <configuration>
-          <module>it.pkg.Basic</module>
-          <genParam>${gwt.genParam}</genParam>
-          <noserver>true</noserver>
-          <runTarget>${runTarget}</runTarget>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-          <packagingExcludes>WEB-INF/**</packagingExcludes>
+          <moduleName>it.pkg.Basic</moduleName>
+          <moduleShortName>basic</moduleShortName>
         </configuration>
       </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat6-maven-plugin</artifactId>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat7-maven-plugin</artifactId>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
-
-  <profiles>
-    <profile>
-      <id>dev</id>
-      <activation>
-        <property>
-          <name>dev</name>
-        </property>
-      </activation>
-      <build>
-        <!-- FIXME: workaround for MGWT-332 -->
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>build-helper-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>add-shared-sources-to-classpath</id>
-                <!-- After 'compile' so they're not compiled to ${project.build.outputDirectory} -->
-                <!-- But before 'process-classes' to make them available to 'gwt:run' -->
-                <!-- Use add-source because gwt-maven-plugin adds sources to the classpath, not resources. -->
-                <phase>process-classes</phase>
-                <goals>
-                  <goal>add-source</goal>
-                </goals>
-                <configuration>
-                  <sources>
-                    <!-- Only sources, resources come from target/classes (to support filtering) -->
-                    <source>${basedir}/../basic-rf-shared/src/main/java</source>
-                    <source>${basedir}/../basic-rf-shared/target/classes</source>
-                  </sources>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>

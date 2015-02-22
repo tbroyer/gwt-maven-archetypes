@@ -22,13 +22,6 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>basic-rf-client</artifactId>
-      <version>${project.version}</version>
-      <type>war</type>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.web.bindery</groupId>
       <artifactId>requestfactory-apt</artifactId>
     </dependency>
@@ -104,10 +97,27 @@
 
   <profiles>
     <profile>
-      <id>dev</id>
+      <!-- XXX: We want to exclude basic-rf-client from 'env-dev' profile, Maven forces us to make a 'env-prod' profile -->
+      <id>env-prod</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>${project.groupId}</groupId>
+          <artifactId>basic-rf-client</artifactId>
+          <version>${project.version}</version>
+          <type>war</type>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>env-dev</id>
       <activation>
         <property>
-          <name>dev</name>
+          <name>env</name>
+          <value>dev</value>
         </property>
       </activation>
       <build>
@@ -120,7 +130,7 @@
                 <scanIntervalSeconds>1</scanIntervalSeconds>
                 <webApp>
                   <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                    <resourcesAsCSV>src/main/webapp,${basedir}/../basic-rf-client/target/basic-rf-client-${project.version}/</resourcesAsCSV>
+                    <resourcesAsCSV>src/main/webapp,${basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
                   </baseResource>
                   <extraClasspath>${basedir}/../basic-rf-shared/target/classes/</extraClasspath>
                 </webApp>

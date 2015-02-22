@@ -23,13 +23,6 @@
       <version>${dollar}{project.version}</version>
     </dependency>
     <dependency>
-      <groupId>${dollar}{project.groupId}</groupId>
-      <artifactId>${rootArtifactId}-client</artifactId>
-      <version>${dollar}{project.version}</version>
-      <type>war</type>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.web.bindery</groupId>
       <artifactId>requestfactory-apt</artifactId>
     </dependency>
@@ -105,10 +98,27 @@
 
   <profiles>
     <profile>
-      <id>dev</id>
+      <!-- XXX: We want to exclude ${rootArtifactId}-client from 'env-dev' profile, Maven forces us to make a 'env-prod' profile -->
+      <id>env-prod</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>${dollar}{project.groupId}</groupId>
+          <artifactId>${rootArtifactId}-client</artifactId>
+          <version>${dollar}{project.version}</version>
+          <type>war</type>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>env-dev</id>
       <activation>
         <property>
-          <name>dev</name>
+          <name>env</name>
+          <value>dev</value>
         </property>
       </activation>
       <build>
@@ -121,7 +131,7 @@
                 <scanIntervalSeconds>1</scanIntervalSeconds>
                 <webApp>
                   <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                    <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../${rootArtifactId}-client/target/${rootArtifactId}-client-${dollar}{project.version}/</resourcesAsCSV>
+                    <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
                   </baseResource>
                   <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
                 </webApp>

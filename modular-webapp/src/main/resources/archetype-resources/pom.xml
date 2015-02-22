@@ -37,6 +37,16 @@
   </dependencyManagement>
 
   <build>
+    <plugins>
+      <plugin>
+        <groupId>net.ltgt.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <inherited>false</inherited>
+        <configuration>
+          <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>
+        </configuration>
+      </plugin>
+    </plugins>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -48,39 +58,19 @@
           </configuration>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.9.1</version>
-        </plugin>
-        <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <version>9.2.3.v20140905</version>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
+          <groupId>net.ltgt.gwt.maven</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
-          <version>2.7.0</version>
+          <version>1.0-beta-1</version>
+          <extensions>true</extensions>
           <configuration>
-            <deploy>${dollar}{project.build.directory}/gwtc/extra</deploy>
-            <extra>${dollar}{project.build.directory}/gwtc/extra</extra>
-            <gen>${dollar}{project.build.directory}/gwtc/gen</gen>
-            <!-- There's an issue on Mac: see http://code.google.com/p/google-web-toolkit/issues/detail?id=7474
-            <workDir>${dollar}{project.build.directory}/gwtc/work</workDir>
-            <codeServerWorkDir>${dollar}{project.build.directory}/gwtc/superDevMode</codeServerWorkDir>
-            -->
             <sourceLevel>1.7</sourceLevel>
             <failOnError>true</failOnError>
           </configuration>
-          <executions>
-            <execution>
-              <id>gwt-compile</id>
-              <phase>prepare-package</phase>
-              <goals>
-                <goal>compile</goal>
-              </goals>
-            </execution>
-          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-source-plugin</artifactId>
@@ -104,16 +94,6 @@
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
           <version>2.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>2.5</version>
-          <configuration>
-            <archive>
-              <addMavenDescriptor>false</addMavenDescriptor>
-            </archive>
-          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>

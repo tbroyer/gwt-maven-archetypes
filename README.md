@@ -36,66 +36,30 @@ delete the `src/test` folder thus bypassing tests (provided the tests pass on th
 continuous integration platform, it's not a big _risk_).
 
 
-### Use SuperDevMode
+### Start the development mode
 
 Change directory to your generated project and issue the following commands:
 
-1. `mvn clean install -Dgwt.draftCompile`
-2. In one terminal window: `cd *-client && mvn gwt:run-codeserver -Ddev`
-3. In another terminal window: `mvn tomcat7:run -Ddev`
+1. In one terminal window: `mvn gwt:codeserver -pl *-client -am`
+2. In another terminal window: `mvn tomcat7:run -pl *-server -am -Denv=dev`
 
 The same is available with `tomcat6` instead of `tomcat7`.
 
-Or if you'd rather use Jetty than Tomcat, use `cd *-server && mvn jetty:start -Ddev` instead of `mvn tomcat7:run`.
+Or if you'd rather use Jetty than Tomcat, use `cd *-server && mvn jetty:start -Denv=dev` instead of `mvn tomcat7:run`.
 
-Note that you only need to `install` once so that `gwt:run-codeserver` and `jetty:start`
-can find the other modules. This is currently needed because neither `gwt:run`
-nor `jetty:start` support running in reactor builds, contrary to `tomcat7:run`.
-
-The `-Dgwt.draftCompile` in the first step is not required, it's only to speed up the
-GWT compilation by disabling optimizations.
-
-### Start the development mode
-
-This is similar to using SuperDevMode, except you can use `-Dgwt.compiler.skip`
-instead of `-Dgwt.draftCompile` to speed up the first step (it only has to be done once
-though so it's probably no big deal), and more importantly you'll use `mvn gwt:run`
-instead of `mvn gwt:run-codeserver`.
-
-Steps therefore become:
-
-1. `mvn clean install -Dgwt.compiler.skip`
-2. In one terminal window: `cd *-client && mvn gwt:run -Ddev`
-3. In another terminal window: `mvn tomcat7:run -Ddev`
+Note that the `-pl` and `-am` are not strictly necessary, they just tell Maven not to
+build the client module when you're dealing with the server one, and vice versa.
 
 
 ### Profiles
 
-There's a special profile defined in the POM file of client and server modules:
-`dev`, which is used only when developping. It configures the Tomcat and Jetty
-plugins and speeds up development with `gwt:run-codeserver`, `gwt:run` and
-`jetty:start` by not requiring a restart when a change to the
-`${rootArtifactId}-shared` is made.
+There's a special profile defined in the POM file of server modules:
+`env-dev`, which is used only when developping. It configures the Tomcat and Jetty
+plugins and removes the dependency on the client module (declared in the `env-prod`
+profile, active by default.)
 
-To activate the `dev` profile you can provide the `-Ddev` system property, or
-use `-Pdev`.
-
-### Productivity tips
-
-When working on the server-side code exclusively, you don't need GWT's DevMode.
-You can then compile the GWT app using `mvn package` or `mvn package -Dgwt.draftCompile`
-and then `mvn tomcat7:run` or `cd *-server && mvn jetty:start -Ddev`. The
-webapp will be redeployed automatically when you change a class (either
-compiled by your IDE, or by `mvn compile`) in either the
-`${rootArtifactId}-server` or `${rootArtifactId}-shared` module (be careful
-though when changing classes in `shared` that you do not break the GWT client
-code, particularly when using GWT-RPC).
-
-When working on the client-side code exclusively, to quickly test it in a
-browser in production mode, use `mvn package -Dgwt.draftCompile`. You can use
-`mvn package -Dgwt.draftCompile -pl :${rootArtifactId}-client -am` while the
-Tomcat or Jetty server is running (launched by `mvn tomcat7:run` or
-`cd *-server && mvn jetty:start -Ddev`), and then simply hit `F5` in your browser.
+To activate the `env-dev` profile you can provide the `-Denv=dev` system property, or
+use `-Penv-dev`.
 
 Compatibility
 -------------

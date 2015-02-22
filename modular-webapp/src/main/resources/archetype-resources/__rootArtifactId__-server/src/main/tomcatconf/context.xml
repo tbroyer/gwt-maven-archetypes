@@ -2,7 +2,6 @@
 #set( $dollar = '$' )
 <Context reloadable="true">
 
-  <!-- FIXME: workaround for https://issues.apache.org/jira/browse/MTOMCAT-158 -->
   <Resources className="org.apache.naming.resources.VirtualDirContext"
-    extraResourcePaths="/${module-short-name}=${dollar}{basedir}/../${rootArtifactId}-client/target/${rootArtifactId}-client-${dollar}{project.version}/${module-short-name}/" />
+    extraResourcePaths="/=${dollar}{basedir}/../target/gwt/launcherDir/" />
 </Context>

@@ -37,9 +37,9 @@
           </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
-          <directory>src/main/webapp</directory>
+          <directory>src/main</directory>
           <includes>
-            <include>**/*.xml</include>
+            <include>module.gwt.xml</include>
           </includes>
         </fileSet>
       </fileSets>
