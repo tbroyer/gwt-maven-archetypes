@@ -106,7 +106,7 @@
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
-          <version>1.0-beta-2</version>
+          <version>1.0-rc-1</version>
           <extensions>true</extensions>
           <configuration>
             <sourceLevel>1.7</sourceLevel>
