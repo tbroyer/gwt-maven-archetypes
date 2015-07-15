@@ -26,7 +26,6 @@
       <groupId>${dollar}{project.groupId}</groupId>
       <artifactId>${rootArtifactId}-shared</artifactId>
       <version>${dollar}{project.version}</version>
-      <!-- NOTE: we don't use type=java-source here to avoid copying sources; this is because we're in a gwt-app -->
       <classifier>sources</classifier>
     </dependency>
     <dependency>

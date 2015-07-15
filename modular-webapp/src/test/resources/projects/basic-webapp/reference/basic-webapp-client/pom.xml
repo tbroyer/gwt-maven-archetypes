@@ -25,7 +25,6 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>basic-webapp-shared</artifactId>
       <version>${project.version}</version>
-      <!-- NOTE: we don't use type=java-source here to avoid copying sources; this is because we're in a gwt-app -->
       <classifier>sources</classifier>
     </dependency>
     <dependency>
