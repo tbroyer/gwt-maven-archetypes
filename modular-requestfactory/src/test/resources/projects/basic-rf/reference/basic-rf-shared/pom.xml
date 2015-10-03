@@ -20,6 +20,11 @@
       <artifactId>requestfactory-client</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.web.bindery</groupId>
+      <artifactId>requestfactory-apt</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
