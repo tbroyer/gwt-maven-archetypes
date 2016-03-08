@@ -11,7 +11,9 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Singleton;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
 @Singleton
 public class HomeViewImpl implements HomeView {
@@ -21,13 +23,18 @@ public class HomeViewImpl implements HomeView {
 
 	private static final Binder binder = GWT.create(Binder.class);
 
-	private final Widget w = binder.createAndBindUi(this);
+	private final Widget w;
 
 	private Presenter presenter;
 
 	@UiField TextBox nameField;
 	@UiField Button  sendButton;
 	@UiField Label   errorLabel;
+
+	@Inject
+	HomeViewImpl() {
+		w = binder.createAndBindUi(this);
+	}
 
 	@Override
 	public void setUserName(String userName) {
@@ -72,4 +79,3 @@ public class HomeViewImpl implements HomeView {
 		}
 	}
 }
-

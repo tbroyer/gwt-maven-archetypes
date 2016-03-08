@@ -2,10 +2,10 @@
 <module>
   <inherits name="com.google.common.base.Base" />
   <inherits name="com.google.gwt.activity.Activity" />
-  <inherits name="com.google.gwt.inject.Inject" />
   <inherits name="com.google.gwt.user.User" />
   <inherits name="com.google.gwt.user.theme.clean.Clean" />
   <inherits name="com.google.web.bindery.requestfactory.RequestFactory" />
+  <inherits name="dagger.Dagger" />
 
   <source path="" />
 

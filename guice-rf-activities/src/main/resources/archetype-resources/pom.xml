@@ -17,6 +17,7 @@
 
     <mavenVersion>3.0</mavenVersion>
 
+    <dagger.version>2.1-SNAPSHOT</dagger.version>
     <guice.version>4.0-beta5</guice.version>
     <guava.version>18.0</guava.version>
   </properties>
@@ -31,14 +32,13 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>1</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
-        <version>${dollar}{guice.version}</version>
-      </dependency>
-      <!-- Needed by google-gin, version must match Guice -->
-      <dependency>
-        <groupId>com.google.inject.extensions</groupId>
-        <artifactId>guice-assistedinject</artifactId>
         <version>${dollar}{guice.version}</version>
       </dependency>
       <dependency>
@@ -52,10 +52,23 @@
         <version>${dollar}{guice.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.gwt.inject</groupId>
-        <artifactId>gin</artifactId>
-        <version>2.1.2</version>
-        <scope>provided</scope>
+        <groupId>com.google.dagger</groupId>
+        <artifactId>dagger-gwt</artifactId>
+        <version>${dollar}{dagger.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.dagger</groupId>
+        <artifactId>dagger-compiler</artifactId>
+        <version>${dollar}{dagger.version}</version>
+        <!-- This is an annotation processor, it's only needed at compile-time -->
+        <optional>true</optional>
+      </dependency>
+      <dependency>
+        <groupId>com.google.auto.factory</groupId>
+        <artifactId>auto-factory</artifactId>
+        <version>1.0-beta3</version>
+        <!-- This is an annotation processor, it's only needed at compile-time -->
+        <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -92,7 +105,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.1</version>
+          <version>3.5.1</version>
           <configuration>
             <source>1.7</source>
             <target>1.7</target>

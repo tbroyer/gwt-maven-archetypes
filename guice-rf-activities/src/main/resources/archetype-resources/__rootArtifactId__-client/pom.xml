@@ -37,12 +37,16 @@
       <artifactId>gwt-dev</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
+      <groupId>com.google.dagger</groupId>
+      <artifactId>dagger-gwt</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.gwt.inject</groupId>
-      <artifactId>gin</artifactId>
+      <groupId>com.google.dagger</groupId>
+      <artifactId>dagger-compiler</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.factory</groupId>
+      <artifactId>auto-factory</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>

@@ -1,9 +1,7 @@
 package ${package};
 
 import com.google.gwt.user.client.ui.IsWidget;
-import com.google.inject.ImplementedBy;
 
-@ImplementedBy(HomeViewImpl.class)
 public interface HomeView extends IsWidget {
 
 	public interface Presenter {
@@ -19,4 +17,3 @@ public interface HomeView extends IsWidget {
 
 	void setPresenter(Presenter presenter);
 }
-

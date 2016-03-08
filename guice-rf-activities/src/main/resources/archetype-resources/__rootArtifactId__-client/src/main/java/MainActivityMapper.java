@@ -5,36 +5,30 @@ import java.util.logging.Logger;
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
 
 public class MainActivityMapper implements ActivityMapper {
 
 	private static final Logger logger = Logger.getLogger(MainActivityMapper.class.getName());
 
-	public interface Factory {
-		HomeActivity homeActivity();
+	@Inject Provider<HomeActivity> homeActivityProvider;
+	@Inject GreetingActivityFactory greetingActivityFactory;
 
-		GreetingActivity greetingActivity(String user);
-	}
-
-	private final Factory factory;
-
-	@Inject
-	MainActivityMapper(Factory factory) {
-		this.factory = factory;
+	@Inject MainActivityMapper() {
 	}
 
 	@Override
 	public Activity getActivity(Place place) {
 		if (place instanceof HomePlace) {
-			return factory.homeActivity();
+			return homeActivityProvider.get();
 		}
 		if (place instanceof GreetingPlace) {
 			GreetingPlace greetingPlace = (GreetingPlace) place;
-			return factory.greetingActivity(greetingPlace.getUser());
+			return greetingActivityFactory.create(greetingPlace.getUser());
 		}
 		logger.severe("Unhandled place type: " + place.getClass().getName());
 		return null;
 	}
 }
-

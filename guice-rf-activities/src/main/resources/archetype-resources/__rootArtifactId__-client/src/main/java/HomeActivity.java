@@ -3,7 +3,8 @@ package ${package};
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 public class HomeActivity extends AbstractActivity implements HomeView.Presenter {
 
@@ -41,4 +42,3 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 		placeController.goTo(new GreetingPlace(name));
 	}
 }
-

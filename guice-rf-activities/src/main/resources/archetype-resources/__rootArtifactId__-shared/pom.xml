@@ -16,9 +16,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
-      <optional>true</optional>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.web.bindery</groupId>
@@ -31,6 +30,11 @@
     <plugins>
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <!-- Workaround for https://issues.apache.org/jira/browse/MSOURCES-95 -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
       </plugin>
     </plugins>
   </build>

@@ -8,7 +8,9 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Singleton;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
 @Singleton
 public class GreetingViewImpl implements GreetingView {
@@ -19,6 +21,7 @@ public class GreetingViewImpl implements GreetingView {
 
 	private Presenter presenter;
 
+	@Inject
 	GreetingViewImpl() {
 		textToServerLabel = new Label();
 		serverResponseLabel = new HTML();

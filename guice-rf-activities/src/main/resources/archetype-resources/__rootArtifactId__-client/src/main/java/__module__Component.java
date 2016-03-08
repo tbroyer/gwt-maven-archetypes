@@ -1,12 +1,15 @@
 package ${package};
 
-import com.google.gwt.inject.client.Ginjector;
-import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.web.bindery.event.shared.EventBus;
 
-@GinModules(${module}GinModule.class)
-public interface ${module}Ginjector extends Ginjector {
+import dagger.Component;
+
+import javax.inject.Singleton;
+
+@Singleton
+@Component(modules = ${module}Module.class)
+public interface ${module}Component {
 
 	EventBus eventBus();
 

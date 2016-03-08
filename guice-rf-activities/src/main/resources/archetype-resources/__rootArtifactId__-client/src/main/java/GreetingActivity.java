@@ -1,5 +1,7 @@
 package ${package};
 
+import com.google.auto.factory.AutoFactory;
+import com.google.auto.factory.Provided;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
@@ -10,9 +12,10 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
-import com.google.inject.Inject;
-import com.google.inject.assistedinject.Assisted;
 
+import javax.inject.Inject;
+
+@AutoFactory
 public class GreetingActivity extends AbstractActivity implements GreetingView.Presenter {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
@@ -30,9 +33,8 @@ public class GreetingActivity extends AbstractActivity implements GreetingView.P
 
 	private boolean cancelled;
 
-	@Inject
-	GreetingActivity(GreetingView view, PlaceController placeController,
-			${module}Factory factory, @Assisted String name) {
+	GreetingActivity(@Provided GreetingView view, @Provided PlaceController placeController,
+			@Provided ${module}Factory factory, @CurrentUser String name) {
 		this.view = view;
 		this.placeController = placeController;
 		this.factory = factory;
@@ -97,4 +99,3 @@ public class GreetingActivity extends AbstractActivity implements GreetingView.P
 		placeController.goTo(new HomePlace());
 	}
 }
-
