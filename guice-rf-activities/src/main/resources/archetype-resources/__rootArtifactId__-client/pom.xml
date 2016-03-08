@@ -48,10 +48,6 @@
       <groupId>com.google.auto.factory</groupId>
       <artifactId>auto-factory</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava-gwt</artifactId>
-    </dependency>
   </dependencies>
 
   <build>

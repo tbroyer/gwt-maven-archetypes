@@ -6,7 +6,6 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 
-import com.google.common.base.Throwables;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Provides;
@@ -27,7 +26,7 @@ public class ${module}ServletContextListener extends GuiceServletContextListener
 			InitialContext ic = new InitialContext();
 			ctx = (Context) ic.lookup("java:comp/env");
 		} catch (NamingException ne) {
-			throw Throwables.propagate(ne);
+			throw new RuntimeException(ne);
 		}
 
 		return Guice.createInjector(new ServletModule() {

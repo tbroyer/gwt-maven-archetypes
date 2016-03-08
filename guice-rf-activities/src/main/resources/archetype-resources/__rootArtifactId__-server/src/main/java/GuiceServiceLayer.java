@@ -1,6 +1,6 @@
 package ${package};
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static java.util.Objects.requireNonNull;
 
 import com.google.inject.Injector;
 import com.google.web.bindery.requestfactory.shared.Locator;
@@ -15,7 +15,7 @@ public class GuiceServiceLayer extends ServiceLayerDecorator {
 
 	@Inject
 	GuiceServiceLayer(Injector injector) {
-		this.injector = checkNotNull(injector);
+		this.injector = requireNonNull(injector);
 	}
 
 	@Override

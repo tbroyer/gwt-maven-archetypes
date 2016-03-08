@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <inherits name="com.google.common.base.Base" />
   <inherits name="com.google.gwt.activity.Activity" />
   <inherits name="com.google.gwt.user.User" />
   <inherits name="com.google.gwt.user.theme.clean.Clean" />

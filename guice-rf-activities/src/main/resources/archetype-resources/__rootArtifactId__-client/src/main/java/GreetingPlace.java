@@ -1,9 +1,10 @@
 package ${package};
 
-import com.google.common.base.Objects;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
 import com.google.gwt.place.shared.Prefix;
+
+import java.util.Objects;
 
 public class GreetingPlace extends Place {
 
@@ -36,7 +37,7 @@ public class GreetingPlace extends Place {
 		if (o == this) return true;
 		if (o instanceof GreetingPlace) {
 			GreetingPlace other = (GreetingPlace) o;
-			return Objects.equal(this.user, other.user);
+			return Objects.equals(this.user, other.user);
 		}
 		return false;
 	}

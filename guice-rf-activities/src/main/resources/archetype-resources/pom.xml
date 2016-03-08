@@ -19,7 +19,6 @@
 
     <dagger.version>2.1-SNAPSHOT</dagger.version>
     <guice.version>4.0-beta5</guice.version>
-    <guava.version>18.0</guava.version>
   </properties>
 
   <dependencyManagement>
@@ -69,17 +68,6 @@
         <version>1.0-beta3</version>
         <!-- This is an annotation processor, it's only needed at compile-time -->
         <optional>true</optional>
-      </dependency>
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${dollar}{guava.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava-gwt</artifactId>
-        <version>${dollar}{guava.version}</version>
-        <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
