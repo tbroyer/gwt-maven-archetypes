@@ -30,11 +30,6 @@ You'll then use the `mvn archetype:generate` command from above, except for the
 `-DarchetypeCatalog` argument which you'll remove, as you now want to use your local
 catalog.
 
-Note that tests are sensitive to line endings, so if you're on Windows make sure
-your clone has Windows (CRLF) end of lines. In case it's not enough, you can simply
-delete the `src/test` folder thus bypassing tests (provided the tests pass on the
-continuous integration platform, it's not a big _risk_).
-
 
 ### Start the development mode
 
