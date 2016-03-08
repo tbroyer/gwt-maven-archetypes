@@ -1,8 +1,7 @@
 package ${package};
 
-import com.google.inject.Provider;
-import com.google.inject.Inject;
-
+import javax.inject.Inject;
+import javax.inject.Provider;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 

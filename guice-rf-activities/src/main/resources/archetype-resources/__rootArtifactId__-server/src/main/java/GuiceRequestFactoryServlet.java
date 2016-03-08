@@ -1,9 +1,10 @@
 package ${package};
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
 import com.google.web.bindery.requestfactory.server.ExceptionHandler;
 import com.google.web.bindery.requestfactory.server.RequestFactoryServlet;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
 @Singleton
 public class GuiceRequestFactoryServlet extends RequestFactoryServlet {

@@ -2,11 +2,12 @@ package ${package};
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.web.bindery.requestfactory.shared.Locator;
 import com.google.web.bindery.requestfactory.shared.ServiceLocator;
 import com.google.web.bindery.requestfactory.server.ServiceLayerDecorator;
+
+import javax.inject.Inject;
 
 public class GuiceServiceLayer extends ServiceLayerDecorator {
 

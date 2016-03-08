@@ -1,9 +1,10 @@
 package ${package};
 
-import com.google.inject.Inject;
 import com.google.web.bindery.autobean.shared.AutoBean;
 import com.google.web.bindery.autobean.shared.AutoBeanCodex;
 import com.google.web.bindery.autobean.vm.AutoBeanFactorySource;
+
+import javax.inject.Inject;
 
 public class ServerUser implements User {
 

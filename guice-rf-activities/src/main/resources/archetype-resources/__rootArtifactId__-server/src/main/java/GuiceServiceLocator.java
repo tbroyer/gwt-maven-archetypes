@@ -1,8 +1,9 @@
 package ${package};
 
-import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.web.bindery.requestfactory.shared.ServiceLocator;
+
+import javax.inject.Inject;
 
 public class GuiceServiceLocator implements ServiceLocator {
 
