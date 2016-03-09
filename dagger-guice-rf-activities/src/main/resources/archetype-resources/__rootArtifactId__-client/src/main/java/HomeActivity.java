@@ -13,6 +13,11 @@ public class HomeActivity extends AbstractActivity implements HomeView.Presenter
 	private final String userName;
 
 	@Inject
+	HomeActivity(HomeViewImpl view, PlaceController placeController, @CurrentUser String userName) {
+		this((HomeView) view, placeController, userName);
+	}
+
+	// For tests, independent from view implementation
 	HomeActivity(HomeView view, PlaceController placeController, @CurrentUser String userName) {
 		this.view = view;
 		this.placeController = placeController;

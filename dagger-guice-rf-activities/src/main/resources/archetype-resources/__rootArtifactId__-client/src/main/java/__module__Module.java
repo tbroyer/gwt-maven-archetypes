@@ -110,16 +110,6 @@ public class ${module}Module {
 		return user.isAdmin();
 	}
 
-	@Provides
-	GreetingView provideGreetingView(GreetingViewImpl impl) {
-		return impl;
-	}
-
-	@Provides
-	HomeView provideHomeView(HomeViewImpl impl) {
-		return impl;
-	}
-
 	private native JavaScriptObject getNativeUser() /*-{
 		return $wnd.user;
 	}-*/;

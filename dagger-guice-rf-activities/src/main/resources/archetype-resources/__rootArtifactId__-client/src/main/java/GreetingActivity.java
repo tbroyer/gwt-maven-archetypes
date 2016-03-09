@@ -33,8 +33,13 @@ public class GreetingActivity extends AbstractActivity implements GreetingView.P
 
 	private boolean cancelled;
 
-	GreetingActivity(@Provided GreetingView view, @Provided PlaceController placeController,
+	GreetingActivity(@Provided GreetingViewImpl view, @Provided PlaceController placeController,
 			@Provided ${module}Factory factory, @CurrentUser String name) {
+		this((GreetingView) view, placeController, factory, name);
+	}
+
+	// For tests, independent from view implementation
+	GreetingActivity(GreetingView view, PlaceController placeController, ${module}Factory factory, String name) {
 		this.view = view;
 		this.placeController = placeController;
 		this.factory = factory;
