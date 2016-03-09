@@ -18,7 +18,7 @@ where the available `<artifactIds>` are:
 
 * `modular-webapp`
 * `modular-requestfactory`
-* `guice-rf-activities`
+* `dagger-guice-rf-activities`
 
 This uses the snapshot deployed to Sonatype OSS. Alternatively, and/or if you want to
 hack on / contribute to the archetypes, you can clone and install the project locally:

@@ -23,7 +23,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>guice-rf-activities</artifactId>
+  <artifactId>dagger-guice-rf-activities</artifactId>
   <packaging>maven-archetype</packaging>
 
   <prerequisites>
