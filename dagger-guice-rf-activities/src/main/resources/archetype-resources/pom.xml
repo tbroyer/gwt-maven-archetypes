@@ -17,7 +17,7 @@
 
     <mavenVersion>3.0</mavenVersion>
 
-    <dagger.version>2.1-SNAPSHOT</dagger.version>
+    <dagger.version>2.1</dagger.version>
     <guice.version>4.0</guice.version>
   </properties>
 
