@@ -46,6 +46,24 @@
             </webApp>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat6-maven-plugin</artifactId>
+          <configuration>
+            <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
+            <path>/</path>
+            <uriEncoding>UTF-8</uriEncoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <configuration>
+            <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
+            <path>/</path>
+            <uriEncoding>UTF-8</uriEncoding>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -99,10 +117,7 @@
               <groupId>org.apache.tomcat.maven</groupId>
               <artifactId>tomcat6-maven-plugin</artifactId>
               <configuration>
-                <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
                 <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
-                <path>/</path>
-                <uriEncoding>UTF-8</uriEncoding>
                 <systemProperties>
                   <gwt.codeserver.port>9876</gwt.codeserver.port>
                 </systemProperties>
@@ -112,10 +127,7 @@
               <groupId>org.apache.tomcat.maven</groupId>
               <artifactId>tomcat7-maven-plugin</artifactId>
               <configuration>
-                <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
                 <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
-                <path>/</path>
-                <uriEncoding>UTF-8</uriEncoding>
                 <systemProperties>
                   <gwt.codeserver.port>9876</gwt.codeserver.port>
                 </systemProperties>

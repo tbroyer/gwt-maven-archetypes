@@ -97,6 +97,26 @@
             </loginServices>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat6-maven-plugin</artifactId>
+          <configuration>
+            <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
+            <path>/</path>
+            <uriEncoding>UTF-8</uriEncoding>
+            <tomcatUsers>${dollar}{basedir}/src/main/tomcatconf/tomcat-users.xml</tomcatUsers>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <configuration>
+            <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
+            <path>/</path>
+            <uriEncoding>UTF-8</uriEncoding>
+            <tomcatUsers>${dollar}{basedir}/src/main/tomcatconf/tomcat-users.xml</tomcatUsers>
+          </configuration>
+        </plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
         <plugin>
@@ -170,22 +190,14 @@
               <groupId>org.apache.tomcat.maven</groupId>
               <artifactId>tomcat6-maven-plugin</artifactId>
               <configuration>
-                <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
                 <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
-                <path>/</path>
-                <tomcatUsers>${dollar}{basedir}/src/main/tomcatconf/tomcat-users.xml</tomcatUsers>
-                <uriEncoding>UTF-8</uriEncoding>
               </configuration>
             </plugin>
             <plugin>
               <groupId>org.apache.tomcat.maven</groupId>
               <artifactId>tomcat7-maven-plugin</artifactId>
               <configuration>
-                <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
                 <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
-                <path>/</path>
-                <tomcatUsers>${dollar}{basedir}/src/main/tomcatconf/tomcat-users.xml</tomcatUsers>
-                <uriEncoding>UTF-8</uriEncoding>
               </configuration>
             </plugin>
           </plugins>
