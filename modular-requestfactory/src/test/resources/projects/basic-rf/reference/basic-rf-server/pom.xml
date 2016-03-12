@@ -65,6 +65,17 @@
     </plugins>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <configuration>
+            <skip>false</skip>
+            <scanIntervalSeconds>1</scanIntervalSeconds>
+            <webApp>
+              <extraClasspath>${basedir}/../basic-rf-shared/target/classes/</extraClasspath>
+            </webApp>
+          </configuration>
+        </plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
         <plugin>
@@ -127,12 +138,10 @@
               <groupId>org.eclipse.jetty</groupId>
               <artifactId>jetty-maven-plugin</artifactId>
               <configuration>
-                <scanIntervalSeconds>1</scanIntervalSeconds>
                 <webApp>
                   <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
                     <resourcesAsCSV>src/main/webapp,${basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
                   </baseResource>
-                  <extraClasspath>${basedir}/../basic-rf-shared/target/classes/</extraClasspath>
                 </webApp>
               </configuration>
             </plugin>

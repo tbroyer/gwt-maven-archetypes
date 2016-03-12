@@ -32,6 +32,24 @@
     </dependency>
   </dependencies>
 
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <configuration>
+            <skip>false</skip>
+            <scanIntervalSeconds>1</scanIntervalSeconds>
+            <webApp>
+              <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
+            </webApp>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
   <profiles>
     <profile>
       <!-- XXX: We want to exclude ${rootArtifactId}-client from 'env-dev' profile, Maven forces us to make a 'env-prod' profile -->
@@ -64,12 +82,10 @@
               <groupId>org.eclipse.jetty</groupId>
               <artifactId>jetty-maven-plugin</artifactId>
               <configuration>
-                <scanIntervalSeconds>1</scanIntervalSeconds>
                 <webApp>
                   <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
                     <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
                   </baseResource>
-                  <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
                 </webApp>
                 <systemProperties>
                   <systemProperty>

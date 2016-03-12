@@ -84,6 +84,11 @@
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <configuration>
+            <skip>false</skip>
+            <scanIntervalSeconds>1</scanIntervalSeconds>
+            <webApp>
+              <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
+            </webApp>
             <loginServices>
               <loginService implementation="org.eclipse.jetty.security.HashLoginService">
                 <name>${module}</name>
@@ -154,12 +159,10 @@
               <groupId>org.eclipse.jetty</groupId>
               <artifactId>jetty-maven-plugin</artifactId>
               <configuration>
-                <scanIntervalSeconds>1</scanIntervalSeconds>
                 <webApp>
                   <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
                     <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
                   </baseResource>
-                  <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
                 </webApp>
               </configuration>
             </plugin>
