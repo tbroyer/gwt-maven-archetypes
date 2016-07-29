@@ -41,10 +41,6 @@
       <artifactId>dagger-gwt</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.dagger</groupId>
-      <artifactId>dagger-compiler</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.auto.factory</groupId>
       <artifactId>auto-factory</artifactId>
     </dependency>
@@ -58,6 +54,23 @@
         <configuration>
           <moduleName>${package}.${module}</moduleName>
           <moduleShortName>${module-short-name}</moduleShortName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>com.google.dagger</groupId>
+              <artifactId>dagger-compiler</artifactId>
+              <version>${dollar}{dagger.version}</version>
+            </path>
+            <path>
+              <groupId>com.google.auto.factory</groupId>
+              <artifactId>auto-factory</artifactId>
+              <version>${dollar}{autofactory.version}</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
     </plugins>

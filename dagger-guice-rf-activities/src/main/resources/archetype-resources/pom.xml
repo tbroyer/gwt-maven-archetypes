@@ -17,7 +17,8 @@
 
     <mavenVersion>3.0</mavenVersion>
 
-    <dagger.version>2.1</dagger.version>
+    <autofactory.version>1.0-beta3</autofactory.version>
+    <dagger.version>2.6</dagger.version>
     <guice.version>4.0</guice.version>
   </properties>
 
@@ -56,16 +57,9 @@
         <version>${dollar}{dagger.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.dagger</groupId>
-        <artifactId>dagger-compiler</artifactId>
-        <version>${dollar}{dagger.version}</version>
-        <!-- This is an annotation processor, it's only needed at compile-time -->
-        <optional>true</optional>
-      </dependency>
-      <dependency>
         <groupId>com.google.auto.factory</groupId>
         <artifactId>auto-factory</artifactId>
-        <version>1.0-beta3</version>
+        <version>${dollar}{autofactory.version}</version>
         <!-- This is an annotation processor, it's only needed at compile-time -->
         <optional>true</optional>
       </dependency>
