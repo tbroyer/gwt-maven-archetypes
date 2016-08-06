@@ -17,51 +17,50 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.requestfactory.shared.RequestTransport;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
 import javax.inject.Singleton;
 
 @Module
-public class ${module}Module {
+public abstract class ${module}Module {
 
-	private Place getDefaultPlace() {
+	private static Place getDefaultPlace() {
 		return new HomePlace();
 	}
 
 	@Provides @Singleton
-	SimpleEventBus provideSimpleEventBus() {
+	static SimpleEventBus provideSimpleEventBus() {
 		return new SimpleEventBus();
 	}
 
-	@Provides
-	EventBus provideEventBus(SimpleEventBus bus) {
-		return bus;
-	}
+	@Binds
+	abstract EventBus provideEventBus(SimpleEventBus bus);
 
 	@Provides
-	PlaceHistoryMapper providePlaceHistoryMapper() {
+	static PlaceHistoryMapper providePlaceHistoryMapper() {
 		return GWT.create(${module}PlaceHistoryMapper.class);
 	}
 
 	@Provides
-	Historian provideHistorian() {
+	static Historian provideHistorian() {
 		// For best UX at login time (preserving place), use an Html5History: https://gist.github.com/1883821
 		return new DefaultHistorian();
 	}
 
 	@Provides
-	RequestTransport provideRequestTransport() {
+	static RequestTransport provideRequestTransport() {
 		return new AuthAwareRequestTransport();
 	}
 
 	@Provides @Singleton
-	PlaceController providePlaceController(EventBus eventBus) {
+	static PlaceController providePlaceController(EventBus eventBus) {
 		return new PlaceController(eventBus);
 	}
 
 	@Provides @Singleton
-	PlaceHistoryHandler providePlaceHistoryHandler(PlaceHistoryMapper mapper, Historian historian,
+	static PlaceHistoryHandler providePlaceHistoryHandler(PlaceHistoryMapper mapper, Historian historian,
 			PlaceController controller, EventBus eventBus) {
 		PlaceHistoryHandler handler = new PlaceHistoryHandler(mapper, historian);
 		handler.register(controller, eventBus, getDefaultPlace());
@@ -69,24 +68,24 @@ public class ${module}Module {
 	}
 
 	@Provides @Singleton
-	${module}Factory provide${module}Factory(EventBus eventBus, RequestTransport transport) {
+	static ${module}Factory provide${module}Factory(EventBus eventBus, RequestTransport transport) {
 		${module}Factory factory = GWT.create(${module}Factory.class);
 		factory.initialize(eventBus, transport);
 		return factory;
 	}
 
 	@Provides
-	Scheduler provideScheduler() {
+	static Scheduler provideScheduler() {
 		return Scheduler.get();
 	}
 
 	@Provides @LogoutUrl
-	native String provideLogoutUrl() /*-{
+	static native String provideLogoutUrl() /*-{
 		return $wnd.logoutUrl != null ? String($wnd.logoutUrl) : null;
 	}-*/;
 
 	@Provides @CurrentUser @Singleton
-	User provideCurrentUser() {
+	static User provideCurrentUser() {
 		final User.Factory factory = GWT.create(User.Factory.class);
 		final JavaScriptObject nativeUser = getNativeUser();
 		final AutoBean<User> user;
@@ -101,16 +100,16 @@ public class ${module}Module {
 	}
 
 	@Provides @CurrentUser
-	String provideUserName(@CurrentUser User user) {
+	static String provideUserName(@CurrentUser User user) {
 		return user.getUserName();
 	}
 
 	@Provides @IsAdmin
-	boolean provideIsAdmin(@CurrentUser User user) {
+	static boolean provideIsAdmin(@CurrentUser User user) {
 		return user.isAdmin();
 	}
 
-	private native JavaScriptObject getNativeUser() /*-{
+	private static native JavaScriptObject getNativeUser() /*-{
 		return $wnd.user;
 	}-*/;
 }
