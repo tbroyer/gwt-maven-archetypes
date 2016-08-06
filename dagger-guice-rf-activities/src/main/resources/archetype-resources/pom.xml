@@ -60,14 +60,11 @@
         <groupId>com.google.auto.factory</groupId>
         <artifactId>auto-factory</artifactId>
         <version>${dollar}{autofactory.version}</version>
-        <!-- This is an annotation processor, it's only needed at compile-time -->
-        <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>3.1.0</version>
-        <scope>provided</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
