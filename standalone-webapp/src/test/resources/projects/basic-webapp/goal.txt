@@ -1,0 +1,2 @@
+verify -Dgwt.draftCompile=true
+
