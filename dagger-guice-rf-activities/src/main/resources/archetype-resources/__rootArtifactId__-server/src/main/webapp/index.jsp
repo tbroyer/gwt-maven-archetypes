@@ -64,9 +64,6 @@
 %>
     </div>
 
-    <%-- OPTIONAL: include this if you want history support in IE6 and IE7 --%>
-    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
-
     <script>
       <%-- see http://blog.alexmaccaw.com/a-javascript-security-flaw for the replace() rationale --%>
       var user = <%= user.toJson().replace("</", "<\\/") %>;
