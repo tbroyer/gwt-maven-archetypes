@@ -1,9 +1,7 @@
 package ${package};
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
@@ -11,7 +9,6 @@ import com.google.gwt.place.shared.PlaceHistoryHandler.DefaultHistorian;
 import com.google.gwt.place.shared.PlaceHistoryHandler.Historian;
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.web.bindery.autobean.gwt.client.impl.JsoSplittable;
-import com.google.web.bindery.autobean.shared.AutoBean;
 import com.google.web.bindery.autobean.shared.AutoBeanCodex;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
@@ -20,6 +17,9 @@ import com.google.web.bindery.requestfactory.shared.RequestTransport;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
+
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsProperty;
 
 import javax.inject.Singleton;
 
@@ -80,23 +80,13 @@ public abstract class ${module}Module {
 	}
 
 	@Provides @LogoutUrl
-	static native String provideLogoutUrl() /*-{
-		return $wnd.logoutUrl != null ? String($wnd.logoutUrl) : null;
-	}-*/;
+	@JsProperty(name = "logoutUrl", namespace = JsPackage.GLOBAL)
+	static native String provideLogoutUrl();
 
 	@Provides @CurrentUser @Singleton
 	static User provideCurrentUser() {
 		final User.Factory factory = GWT.create(User.Factory.class);
-		final JavaScriptObject nativeUser = getNativeUser();
-		final AutoBean<User> user;
-		if (GWT.isScript()) {
-			user = AutoBeanCodex.decode(factory, User.class, (JsoSplittable) nativeUser);
-		} else {
-			// JsoSplittable is a @GwtScriptOnly, so we need this hack in devMode
-			final String payload = new JSONObject(nativeUser).toString();
-			user = AutoBeanCodex.decode(factory, User.class, payload);
-		}
-		return user.as();
+		return AutoBeanCodex.decode(factory, User.class, getNativeUser()).as();
 	}
 
 	@Provides @CurrentUser
@@ -109,7 +99,6 @@ public abstract class ${module}Module {
 		return user.isAdmin();
 	}
 
-	private static native JavaScriptObject getNativeUser() /*-{
-		return $wnd.user;
-	}-*/;
+	@JsProperty(name = "user", namespace = JsPackage.GLOBAL)
+	private static native JsoSplittable getNativeUser();
 }
