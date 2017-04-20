@@ -8,14 +8,8 @@
   <version>${version}</version>
   <packaging>pom</packaging>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <mavenVersion>3.0</mavenVersion>
 
     <autofactory.version>1.0-beta3</autofactory.version>
     <dagger.version>2.7</dagger.version>

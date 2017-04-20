@@ -11,10 +11,6 @@
 
   <artifactId>${artifactId}</artifactId>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
-
   <dependencies>
     <dependency>
       <groupId>com.google.gwt</groupId>

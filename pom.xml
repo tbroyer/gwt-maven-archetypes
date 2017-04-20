@@ -53,10 +53,6 @@
     </contributor>
   </contributors>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
-
   <modules>
     <module>modular-webapp</module>
     <module>modular-requestfactory</module>
@@ -75,7 +71,5 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <mavenVersion>3.0</mavenVersion>
   </properties>
 </project>

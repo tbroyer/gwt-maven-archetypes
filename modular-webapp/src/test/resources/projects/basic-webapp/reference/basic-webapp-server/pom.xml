@@ -11,10 +11,6 @@
   <artifactId>basic-webapp-server</artifactId>
   <packaging>war</packaging>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
-
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>

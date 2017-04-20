@@ -11,10 +11,6 @@
   <artifactId>basic-webapp-client</artifactId>
   <packaging>gwt-app</packaging>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
-
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>

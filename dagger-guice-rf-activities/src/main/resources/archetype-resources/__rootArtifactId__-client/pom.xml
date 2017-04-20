@@ -12,10 +12,6 @@
   <artifactId>${artifactId}</artifactId>
   <packaging>gwt-app</packaging>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
-
   <dependencies>
     <dependency>
       <groupId>${dollar}{project.groupId}</groupId>

@@ -10,10 +10,6 @@
 
   <artifactId>basic-webapp-shared</artifactId>
 
-  <prerequisites>
-    <maven>${mavenVersion}</maven>
-  </prerequisites>
-
   <dependencies>
     <dependency>
       <groupId>com.google.gwt</groupId>
