@@ -8,8 +8,6 @@ import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.place.shared.PlaceHistoryHandler.DefaultHistorian;
 import com.google.gwt.place.shared.PlaceHistoryHandler.Historian;
 import com.google.gwt.place.shared.PlaceHistoryMapper;
-import com.google.web.bindery.autobean.gwt.client.impl.JsoSplittable;
-import com.google.web.bindery.autobean.shared.AutoBeanCodex;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.requestfactory.shared.RequestTransport;
@@ -84,10 +82,8 @@ public abstract class ${module}Module {
 	static native String provideLogoutUrl();
 
 	@Provides @CurrentUser @Singleton
-	static User provideCurrentUser() {
-		final User.Factory factory = GWT.create(User.Factory.class);
-		return AutoBeanCodex.decode(factory, User.class, getNativeUser()).as();
-	}
+	@JsProperty(name = "user", namespace = JsPackage.GLOBAL)
+	static native User provideCurrentUser();
 
 	@Provides @CurrentUser
 	static String provideUserName(@CurrentUser User user) {
@@ -98,7 +94,4 @@ public abstract class ${module}Module {
 	static boolean provideIsAdmin(@CurrentUser User user) {
 		return user.isAdmin();
 	}
-
-	@JsProperty(name = "user", namespace = JsPackage.GLOBAL)
-	private static native JsoSplittable getNativeUser();
 }
