@@ -8,7 +8,7 @@ How to use
 
 ### Generate a project
 
-    mvn archetype:generate \
+    mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate \
        -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/ \
        -DarchetypeGroupId=net.ltgt.gwt.archetypes \
        -DarchetypeArtifactId=<artifactId> \
