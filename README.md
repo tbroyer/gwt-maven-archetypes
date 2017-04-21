@@ -12,7 +12,7 @@ How to use
        -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/ \
        -DarchetypeGroupId=net.ltgt.gwt.archetypes \
        -DarchetypeArtifactId=<artifactId> \
-       -DarchetypeVersion=1.0-SNAPSHOT
+       -DarchetypeVersion=HEAD-SNAPSHOT
 
 where the available `<artifactIds>` are:
 
