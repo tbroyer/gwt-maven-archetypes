@@ -25,4 +25,7 @@
 
   <artifactId>modular-requestfactory</artifactId>
   <packaging>maven-archetype</packaging>
+
+  <name>GWT Modular RequestFactory WebApp Archetype</name>
+  <description>The GWT WebAppCreator's sample, modularized and using RequestFactory.</description>
 </project>

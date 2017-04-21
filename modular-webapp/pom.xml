@@ -25,4 +25,7 @@
 
   <artifactId>modular-webapp</artifactId>
   <packaging>maven-archetype</packaging>
+
+  <name>GWT Modular GWT-RPC WebApp Archetype</name>
+  <description>The GWT WebAppCreator's sample (using GWT-RPC), modularized.</description>
 </project>

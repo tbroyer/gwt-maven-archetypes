@@ -22,6 +22,8 @@
   <version>HEAD-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <url>https://github.com/tbroyer/gwt-maven-archetypes</url>
+
   <inceptionYear>2012</inceptionYear>
   <licenses>
     <license>
