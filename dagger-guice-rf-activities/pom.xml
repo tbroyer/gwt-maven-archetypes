@@ -26,6 +26,6 @@
   <artifactId>dagger-guice-rf-activities</artifactId>
   <packaging>maven-archetype</packaging>
 
-  <name>GWT Modular WebApp Archetype</name>
+  <name>GWT Modular Dagger/Guice/RequestFactory/Activities WebApp Archetype</name>
   <description>GWT application with user authentication, using Dagger and Places/Activities on client side, Guice on server side, RequestFactory for communication.</description>
 </project>
