@@ -11,7 +11,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <autofactory.version>1.0-beta3</autofactory.version>
+    <autofactory.version>1.0-beta5</autofactory.version>
     <dagger.version>2.8</dagger.version>
     <guice.version>4.1.0</guice.version>
   </properties>
