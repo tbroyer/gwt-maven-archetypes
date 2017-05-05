@@ -38,7 +38,10 @@ Change directory to your generated project and issue the following commands:
 1. In one terminal window: `mvn gwt:codeserver -pl *-client -am`
 2. In another terminal window: `mvn tomcat7:run -pl *-server -am -Denv=dev`
 
-Or if you'd rather use Jetty than Tomcat, use `cd *-server && mvn jetty:start -Denv=dev` instead of `mvn tomcat7:run`.
+Or if you'd rather use Jetty than Tomcat, use `cd *-server && mvn jetty:start -Denv=dev` instead of `mvn tomcat7:run`;
+note however that you'll have to install the dependencies (shared module) at least once
+before you can use Jetty that way (a quick way to install just the bare minimum is to use
+`mvn install -pl *-server -am -Denv=dev -DskipTests`).
 
 Note that the `-pl` and `-am` are not strictly necessary, they just tell Maven not to
 build the client module when you're dealing with the server one, and vice versa.
