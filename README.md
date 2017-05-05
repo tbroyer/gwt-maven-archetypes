@@ -38,8 +38,6 @@ Change directory to your generated project and issue the following commands:
 1. In one terminal window: `mvn gwt:codeserver -pl *-client -am`
 2. In another terminal window: `mvn tomcat7:run -pl *-server -am -Denv=dev`
 
-The same is available with `tomcat6` instead of `tomcat7`.
-
 Or if you'd rather use Jetty than Tomcat, use `cd *-server && mvn jetty:start -Denv=dev` instead of `mvn tomcat7:run`.
 
 Note that the `-pl` and `-am` are not strictly necessary, they just tell Maven not to
