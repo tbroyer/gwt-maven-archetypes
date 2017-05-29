@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <autofactory.version>1.0-beta5</autofactory.version>
-    <dagger.version>2.11-rc2</dagger.version>
+    <dagger.version>2.11</dagger.version>
     <guice.version>4.1.0</guice.version>
   </properties>
 
