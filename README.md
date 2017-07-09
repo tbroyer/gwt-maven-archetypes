@@ -8,11 +8,10 @@ How to use
 
 ### Generate a project
 
-    mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate \
-       -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/ \
+    mvn archetype:generate \
        -DarchetypeGroupId=net.ltgt.gwt.archetypes \
-       -DarchetypeArtifactId=<artifactId> \
-       -DarchetypeVersion=HEAD-SNAPSHOT
+       -DarchetypeVersion=LATEST \
+       -DarchetypeArtifactId=<artifactId>
 
 where the available `<artifactIds>` are:
 
@@ -20,15 +19,15 @@ where the available `<artifactIds>` are:
 * `modular-requestfactory`
 * `dagger-guice-rf-activities`
 
-This uses the snapshot deployed to Sonatype OSS. Alternatively, and/or if you want to
-hack on / contribute to the archetypes, you can clone and install the project locally:
+This should use the latest release from the Central Repository.
+Alternatively, and/or if you want to hack on / contribute to the archetypes,
+you can clone and install the project locally:
 
     git clone https://github.com/tbroyer/gwt-maven-archetypes.git
     cd gwt-maven-archetypes && mvn clean install
 
 You'll then use the `mvn archetype:generate` command from above, except for the
-`-DarchetypeCatalog` argument which you'll remove, as you now want to use your local
-catalog.
+`-DarchetypeVersion` argument which you'll replace with `HEAD-SNAPSHOT`.
 
 
 ### Start the development mode
