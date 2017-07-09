@@ -53,7 +53,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.4.4.v20170414</version>
+          <version>9.4.6.v20170531</version>
           <configuration>
             <skip>true</skip>
           </configuration>
@@ -61,7 +61,7 @@
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
-          <version>1.0-rc-7</version>
+          <version>1.0-rc-8</version>
           <extensions>true</extensions>
           <configuration>
             <sourceLevel>1.8</sourceLevel>
