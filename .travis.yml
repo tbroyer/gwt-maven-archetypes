@@ -5,9 +5,6 @@ jdk: oraclejdk8
 install: true
 script: mvn -U verify --fail-at-end
 
-after_success:
-  - ci/deploy-snapshot.sh
-
 sudo: false
 cache:
   directories:
