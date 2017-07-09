@@ -24,6 +24,7 @@
   </parent>
 
   <artifactId>modular-requestfactory</artifactId>
+  <version>2017.7.9</version>
   <packaging>maven-archetype</packaging>
 
   <name>GWT Modular RequestFactory WebApp Archetype</name>
