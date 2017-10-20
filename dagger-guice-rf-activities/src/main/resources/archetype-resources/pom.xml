@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <autofactory.version>1.0-beta5</autofactory.version>
-    <dagger.version>2.11</dagger.version>
+    <dagger.version>2.12</dagger.version>
     <guice.version>4.1.0</guice.version>
   </properties>
 
@@ -78,7 +78,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.6.1</version>
+          <version>3.7.0</version>
           <configuration>
             <source>1.8</source>
             <target>1.8</target>
@@ -87,7 +87,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.4.6.v20170531</version>
+          <version>9.4.7.v20170914</version>
           <configuration>
             <skip>true</skip>
           </configuration>
