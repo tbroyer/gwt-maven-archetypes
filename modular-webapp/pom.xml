@@ -24,6 +24,7 @@
   </parent>
 
   <artifactId>modular-webapp</artifactId>
+  <version>HEAD-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>GWT Modular GWT-RPC WebApp Archetype</name>

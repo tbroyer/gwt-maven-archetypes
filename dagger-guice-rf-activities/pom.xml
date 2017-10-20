@@ -24,6 +24,7 @@
   </parent>
 
   <artifactId>dagger-guice-rf-activities</artifactId>
+  <version>HEAD-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>GWT Modular Dagger/Guice/RequestFactory/Activities WebApp Archetype</name>
