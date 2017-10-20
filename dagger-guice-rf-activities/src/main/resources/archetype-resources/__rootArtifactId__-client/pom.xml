@@ -41,6 +41,16 @@
       <artifactId>auto-factory</artifactId>
       <!-- This is an annotation processor, it's only needed at compile-time -->
       <optional>true</optional>
+      <!-- auto-factory does not shade its dependencies, so exclude them all -->
+      <!-- we only need the annotations here; dependencies are all included  -->
+      <!-- in the maven-compiler-plugin's annotationProcessorPaths           -->
+      <!-- See https://github.com/google/auto/issues/105 -->
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 
