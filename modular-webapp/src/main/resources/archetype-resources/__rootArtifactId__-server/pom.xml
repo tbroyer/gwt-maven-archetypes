@@ -91,7 +91,7 @@
               <configuration>
                 <webApp>
                   <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                    <resourcesAsCSV>src/main/webapp,${dollar}{basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
+                    <resourcesAsCSV>${dollar}{basedir}/src/main/webapp,${dollar}{basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
                   </baseResource>
                 </webApp>
               </configuration>
