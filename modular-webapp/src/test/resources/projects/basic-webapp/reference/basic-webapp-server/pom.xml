@@ -40,6 +40,7 @@
             <webApp>
               <extraClasspath>${basedir}/../basic-webapp-shared/target/classes/</extraClasspath>
             </webApp>
+            <contextXml>${basedir}/src/main/jettyconf/context.xml</contextXml>
           </configuration>
         </plugin>
         <plugin>

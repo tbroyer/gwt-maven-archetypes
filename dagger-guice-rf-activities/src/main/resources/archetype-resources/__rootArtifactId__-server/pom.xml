@@ -86,6 +86,7 @@
             <webApp>
               <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
             </webApp>
+            <contextXml>${dollar}{basedir}/src/main/jettyconf/context.xml</contextXml>
             <loginServices>
               <loginService implementation="org.eclipse.jetty.security.HashLoginService">
                 <name>${module}</name>
