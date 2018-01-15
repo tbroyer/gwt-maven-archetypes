@@ -66,7 +66,6 @@
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <configuration>
-            <skip>false</skip>
             <scanIntervalSeconds>1</scanIntervalSeconds>
             <webApp>
               <extraClasspath>${basedir}/../basic-rf-shared/target/classes/</extraClasspath>
