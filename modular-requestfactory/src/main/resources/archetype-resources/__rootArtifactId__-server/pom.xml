@@ -146,9 +146,10 @@
               <artifactId>jetty-maven-plugin</artifactId>
               <configuration>
                 <webApp>
-                  <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                    <resourcesAsCSV>${dollar}{basedir}/src/main/webapp,${dollar}{basedir}/../target/gwt/launcherDir/</resourcesAsCSV>
-                  </baseResource>
+                  <resourceBases>
+                    <resourceBase>${dollar}{basedir}/src/main/webapp</resourceBase>
+                    <resourceBase>${dollar}{basedir}/../target/gwt/launcherDir/</resourceBase>
+                  </resourceBases>
                 </webApp>
               </configuration>
             </plugin>
