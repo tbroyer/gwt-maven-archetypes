@@ -1,6 +1,8 @@
 language: java
 
-jdk: oraclejdk8
+jdk:
+  - oraclejdk8
+  - oraclejdk9
 
 install: true
 script: mvn -U verify --fail-at-end
