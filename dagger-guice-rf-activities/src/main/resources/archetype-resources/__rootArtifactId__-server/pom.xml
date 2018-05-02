@@ -23,6 +23,8 @@
       <artifactId>requestfactory-apt</artifactId>
       <!-- This is an annotation processor, it's only needed at compile-time -->
       <optional>true</optional>
+      <!-- The provided scope will exclude the dependency from the webapp classpath in jetty-maven-plugin -->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.web.bindery</groupId>
