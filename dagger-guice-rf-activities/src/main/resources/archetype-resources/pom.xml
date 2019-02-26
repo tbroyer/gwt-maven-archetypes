@@ -11,7 +11,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <autofactory.version>1.0-beta5</autofactory.version>
+    <assistedinject.version>0.3.2</assistedinject.version>
     <dagger.version>2.15</dagger.version>
     <guice.version>4.2.0</guice.version>
   </properties>
@@ -51,9 +51,9 @@
         <version>${dollar}{dagger.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.auto.factory</groupId>
-        <artifactId>auto-factory</artifactId>
-        <version>${dollar}{autofactory.version}</version>
+        <groupId>com.squareup.inject</groupId>
+        <artifactId>assisted-inject-annotations-dagger2</artifactId>
+        <version>${dollar}{assistedinject.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -131,4 +131,24 @@
       </plugins>
     </pluginManagement>
   </build>
+  <profiles>
+    <profile>
+      <id>jdk9plus</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                <release>8</release>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
 </project>

@@ -11,6 +11,7 @@ import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.requestfactory.shared.RequestTransport;
+import com.squareup.inject.assisted.dagger2.AssistedModule;
 
 import dagger.Binds;
 import dagger.Module;
@@ -21,7 +22,8 @@ import jsinterop.annotations.JsProperty;
 
 import javax.inject.Singleton;
 
-@Module
+@AssistedModule
+@Module(includes = AssistedInject_${module}Module.class)
 public abstract class ${module}Module {
 
 	private static Place getDefaultPlace() {

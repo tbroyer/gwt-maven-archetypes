@@ -37,20 +37,8 @@
       <artifactId>dagger-gwt</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.auto.factory</groupId>
-      <artifactId>auto-factory</artifactId>
-      <!-- This is an annotation processor, it's only needed at compile-time -->
-      <optional>true</optional>
-      <!-- auto-factory does not shade its dependencies, so exclude them all -->
-      <!-- we only need the annotations here; dependencies are all included  -->
-      <!-- in the maven-compiler-plugin's annotationProcessorPaths           -->
-      <!-- See https://github.com/google/auto/issues/105 -->
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
+      <groupId>com.squareup.inject</groupId>
+      <artifactId>assisted-inject-annotations-dagger2</artifactId>
     </dependency>
   </dependencies>
 
@@ -74,9 +62,9 @@
               <version>${dollar}{dagger.version}</version>
             </path>
             <path>
-              <groupId>com.google.auto.factory</groupId>
-              <artifactId>auto-factory</artifactId>
-              <version>${dollar}{autofactory.version}</version>
+              <groupId>com.squareup.inject</groupId>
+              <artifactId>assisted-inject-processor-dagger2</artifactId>
+              <version>${dollar}{assistedinject.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>

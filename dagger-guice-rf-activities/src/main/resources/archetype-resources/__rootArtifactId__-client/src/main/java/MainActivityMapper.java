@@ -14,7 +14,7 @@ public class MainActivityMapper implements ActivityMapper {
 	private static final Logger logger = Logger.getLogger(MainActivityMapper.class.getName());
 
 	@Inject Provider<HomeActivity> homeActivityProvider;
-	@Inject GreetingActivityFactory greetingActivityFactory;
+	@Inject GreetingActivity.Factory greetingActivityFactory;
 
 	@Inject MainActivityMapper() {
 	}

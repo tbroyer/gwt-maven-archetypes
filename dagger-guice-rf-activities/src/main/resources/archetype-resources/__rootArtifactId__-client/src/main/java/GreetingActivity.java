@@ -1,7 +1,5 @@
 package ${package};
 
-import com.google.auto.factory.AutoFactory;
-import com.google.auto.factory.Provided;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
@@ -12,10 +10,11 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
+import com.squareup.inject.assisted.Assisted;
+import com.squareup.inject.assisted.AssistedInject;
 
 import javax.inject.Inject;
 
-@AutoFactory
 public class GreetingActivity extends AbstractActivity implements GreetingView.Presenter {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
@@ -26,6 +25,11 @@ public class GreetingActivity extends AbstractActivity implements GreetingView.P
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again.");
 
+	@AssistedInject.Factory
+	public interface Factory {
+		GreetingActivity create(String name);
+	}
+
 	private final GreetingView view;
 	private final PlaceController placeController;
 	private final ${module}Factory factory;
@@ -33,8 +37,9 @@ public class GreetingActivity extends AbstractActivity implements GreetingView.P
 
 	private boolean cancelled;
 
-	GreetingActivity(@Provided GreetingViewImpl view, @Provided PlaceController placeController,
-			@Provided ${module}Factory factory, @CurrentUser String name) {
+	@AssistedInject
+	GreetingActivity(GreetingViewImpl view, PlaceController placeController,
+			${module}Factory factory, @Assisted String name) {
 		this((GreetingView) view, placeController, factory, name);
 	}
 
