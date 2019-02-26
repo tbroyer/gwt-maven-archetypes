@@ -12,8 +12,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <assistedinject.version>0.3.2</assistedinject.version>
-    <dagger.version>2.15</dagger.version>
-    <guice.version>4.2.0</guice.version>
+    <dagger.version>2.21</dagger.version>
+    <guice.version>4.2.2</guice.version>
   </properties>
 
   <dependencyManagement>
@@ -87,7 +87,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.4.10.v20180503</version>
+          <version>9.4.15.v20190215</version>
         </plugin>
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>
