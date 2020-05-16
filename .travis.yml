@@ -1,8 +1,9 @@
 language: java
 
 jdk:
-  - oraclejdk8
-  - oraclejdk11
+  - openjdk8
+  - openjdk11
+  - openjdk14
 
 install: true
 script: mvn -U verify --fail-at-end
