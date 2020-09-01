@@ -25,7 +25,7 @@ public class Application {
   
   @Bean
   public ServletRegistrationBean servletRegistrationBean() {
-    ServletRegistrationBean bean = new ServletRegistrationBean(new GreetingServiceImpl(), "/app/greet");
+    ServletRegistrationBean<GreetingServiceImpl> bean = new ServletRegistrationBean<>(new GreetingServiceImpl(), "/app/greet");
     return bean;
   }
   
