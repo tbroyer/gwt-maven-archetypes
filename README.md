@@ -16,6 +16,7 @@ How to use
 where the available `<artifactIds>` are:
 
 * `modular-webapp`
+* `modular-springboot-webapp`
 * `modular-requestfactory`
 * `dagger-guice-rf-activities`
 
@@ -36,8 +37,8 @@ Change directory to your generated project and issue the following commands:
 
 1. In one terminal window: `mvn gwt:codeserver -pl *-client -am`
 2. In another terminal window: `mvn jetty:run -pl *-server -am -Denv=dev`
-
-Or if you'd rather use Tomcat than Jetty, use `mvn tomcat7:run` instead of `mvn jetty:run`.
+3. 
+Or if you'd rather use Tomcat than Jetty, use `mvn tomcat7:run` instead of `mvn jetty:run`. And if you'd rather use SpringBoot, use `mvn spring-boot:run -pl *-server -am -Denv=dev` instead of `mvn jetty:run`.
 
 Note that the `-pl` and `-am` are not strictly necessary, they just tell Maven not to
 build the client module when you're dealing with the server one, and vice versa.
