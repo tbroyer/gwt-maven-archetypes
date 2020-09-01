@@ -9,7 +9,6 @@
   <packaging>pom</packaging>
 
   <properties>
-    <spring-boot.public.dir>${dollar}{basedir}/${rootArtifactId}-server/target/classes/public/</spring-boot.public.dir>
     <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,10 +23,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>3.1.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${dollar}{spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -39,8 +41,7 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <inherited>false</inherited>
         <configuration>
-          <launcherDir>${dollar}{spring-boot.public.dir}</launcherDir>
-          <warDir>${dollar}{spring-boot.public.dir}</warDir>
+          <launcherDir>${dollar}{basedir}/${rootArtifactId}-server/target/classes/public/</launcherDir>
         </configuration>
       </plugin>
     </plugins>
