@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    paths-ignore:
+      - '**/*.md'
+    pull_request:
+      paths-ignore:
+        - '**/*.md'
+
+jobs:
+  linux-jdk8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup environment
+        run: echo "JAVA_HOME=${JAVA_HOME_8_X64}" | tee -a "$GITHUB_ENV"
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+
+      - name: Build with Maven
+        run: mvn -B -U -ntp verify --fail-at-end
+
+  windows-jdk11:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup environment
+        run: echo "JAVA_HOME=${Env:JAVA_HOME_11_X64}" | Tee-Object -FilePath $env:GITHUB_ENV -Append
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+
+      - name: Build with Maven
+        run: mvn -B -U -ntp verify --fail-at-end
