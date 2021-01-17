@@ -36,10 +36,6 @@
       <groupId>com.google.dagger</groupId>
       <artifactId>dagger-gwt</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.squareup.inject</groupId>
-      <artifactId>assisted-inject-annotations-dagger2</artifactId>
-    </dependency>
   </dependencies>
 
   <build>
@@ -61,11 +57,6 @@
               <groupId>com.google.dagger</groupId>
               <artifactId>dagger-compiler</artifactId>
               <version>${dollar}{dagger.version}</version>
-            </path>
-            <path>
-              <groupId>com.squareup.inject</groupId>
-              <artifactId>assisted-inject-processor-dagger2</artifactId>
-              <version>${dollar}{assistedinject.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>

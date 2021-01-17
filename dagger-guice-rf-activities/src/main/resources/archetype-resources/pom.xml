@@ -11,7 +11,6 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <assistedinject.version>0.6.0</assistedinject.version>
     <dagger.version>2.31</dagger.version>
     <guice.version>4.2.3</guice.version>
   </properties>
@@ -49,11 +48,6 @@
         <groupId>com.google.dagger</groupId>
         <artifactId>dagger-gwt</artifactId>
         <version>${dollar}{dagger.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.squareup.inject</groupId>
-        <artifactId>assisted-inject-annotations-dagger2</artifactId>
-        <version>${dollar}{assistedinject.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
