@@ -62,11 +62,6 @@
               <artifactId>dagger-compiler</artifactId>
               <version>${dollar}{dagger.version}</version>
             </path>
-            <path>
-              <groupId>com.squareup.inject</groupId>
-              <artifactId>assisted-inject-processor-dagger2</artifactId>
-              <version>${dollar}{assistedinject.version}</version>
-            </path>
           </annotationProcessorPaths>
         </configuration>
       </plugin>

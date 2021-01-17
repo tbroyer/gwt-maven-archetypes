@@ -10,8 +10,10 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
-import com.squareup.inject.assisted.Assisted;
-import com.squareup.inject.assisted.AssistedInject;
+
+import dagger.assisted.Assisted;
+import dagger.assisted.AssistedFactory;
+import dagger.assisted.AssistedInject;
 
 import javax.inject.Inject;
 
@@ -25,7 +27,7 @@ public class GreetingActivity extends AbstractActivity implements GreetingView.P
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again.");
 
-	@AssistedInject.Factory
+	@AssistedFactory
 	public interface Factory {
 		GreetingActivity create(String name);
 	}
