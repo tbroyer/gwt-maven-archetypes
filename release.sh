@@ -28,7 +28,7 @@ if [[ -n $(git status --porcelain) ]]; then
   exit 1
 fi
 
-git checkout $(git rev-parse --verify HEAD)
+git switch --detach $(git rev-parse --verify HEAD)
 
 for module in "${MODULES[@]}"; do
   mvn versions:set -DgenerateBackupPoms=false -DnewVersion="$VERSION" -pl "$module"
@@ -50,7 +50,6 @@ done
 mvn clean deploy -Prelease -pl $(IFS=, ; echo "${MODULES[*]}")
 git push origin "${TAGS[@]}"
 
-git checkout -
+git switch -
 
 popd &>/dev/null
-
