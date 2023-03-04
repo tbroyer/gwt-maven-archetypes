@@ -12,16 +12,13 @@ jobs:
   linux-jdk8:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Setup environment
-        run: echo "JAVA_HOME=${JAVA_HOME_8_X64}" | tee -a "$GITHUB_ENV"
-
-      - name: Cache Maven dependencies
-        uses: actions/cache@v2
+      - uses: actions/setup-java@v3
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          distribution: 'temurin'
+          java-version: '8'
+          cache: 'maven'
 
       - name: Build with Maven
         run: mvn -B -U -ntp verify --fail-at-end
@@ -29,16 +26,13 @@ jobs:
   windows-jdk11:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Setup environment
-        run: echo "JAVA_HOME=${Env:JAVA_HOME_11_X64}" | Tee-Object -FilePath $env:GITHUB_ENV -Append
-
-      - name: Cache Maven dependencies
-        uses: actions/cache@v2
+      - uses: actions/setup-java@v3
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          distribution: 'temurin'
+          java-version: '11'
+          cache: 'maven'
 
       - name: Build with Maven
         run: mvn -B -U -ntp verify --fail-at-end
