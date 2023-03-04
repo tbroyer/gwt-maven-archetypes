@@ -12,7 +12,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.google.web.bindery</groupId>
+      <groupId>org.gwtproject.web.bindery</groupId>
       <artifactId>requestfactory-client</artifactId>
       <scope>provided</scope>
     </dependency>

@@ -19,7 +19,7 @@
       <version>${dollar}{project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.google.web.bindery</groupId>
+      <groupId>org.gwtproject.web.bindery</groupId>
       <artifactId>requestfactory-apt</artifactId>
       <!-- This is an annotation processor, it's only needed at compile-time -->
       <optional>true</optional>
@@ -27,7 +27,7 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.web.bindery</groupId>
+      <groupId>org.gwtproject.web.bindery</groupId>
       <artifactId>requestfactory-server</artifactId>
     </dependency>
     <dependency>
