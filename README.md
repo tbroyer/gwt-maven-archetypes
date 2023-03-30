@@ -8,6 +8,9 @@ How to use
 
 ### Generate a project
 
+Note:  Windows Powershell Users - make sure to quote the parameters. ie.  mvn archetype:generate "-DarchetypeGroupId=net.ltgt.gwt.archetypes" "-DarchetypeVersion=LATEST" "-DarchetypeArtifactId=modular-webapp"  See https://stackoverflow.com/questions/17385864/why-does-not-archetypegenerate-with-parameters-work-for-me
+
+
     mvn archetype:generate \
        -DarchetypeGroupId=net.ltgt.gwt.archetypes \
        -DarchetypeVersion=LATEST \
