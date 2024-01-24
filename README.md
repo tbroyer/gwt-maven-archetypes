@@ -17,7 +17,6 @@ where the available `<artifactIds>` are:
 
 * `modular-webapp`
 * `modular-requestfactory`
-* `dagger-guice-rf-activities`
 
 This should use the latest release from the Central Repository.
 Alternatively, and/or if you want to hack on / contribute to the archetypes,

@@ -52,7 +52,6 @@
   <modules>
     <module>modular-webapp</module>
     <module>modular-requestfactory</module>
-    <module>dagger-guice-rf-activities</module>
   </modules>
 
   <scm>
