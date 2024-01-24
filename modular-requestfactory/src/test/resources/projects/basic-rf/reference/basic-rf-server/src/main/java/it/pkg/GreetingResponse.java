@@ -1,6 +1,6 @@
 package it.pkg;
 
-import com.google.web.bindery.requestfactory.server.RequestFactoryServlet;
+import com.google.web.bindery.requestfactory.server.jakarta.RequestFactoryServlet;
 
 public class GreetingResponse {
 	private boolean successful;

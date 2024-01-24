@@ -20,11 +20,11 @@
     </dependency>
     <dependency>
       <groupId>org.gwtproject</groupId>
-      <artifactId>gwt-servlet</artifactId>
+      <artifactId>gwt-servlet-jakarta</artifactId>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
   </dependencies>

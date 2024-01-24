@@ -13,7 +13,7 @@
   <dependencies>
     <dependency>
       <groupId>org.gwtproject</groupId>
-      <artifactId>gwt-servlet</artifactId>
+      <artifactId>gwt-servlet-jakarta</artifactId>
       <scope>provided</scope>
     </dependency>
   </dependencies>

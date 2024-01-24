@@ -1,6 +1,6 @@
 package ${package};
 
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.google.gwt.user.server.rpc.jakarta.RemoteServiceServlet;
 
 /**
  * The server side implementation of the RPC service.

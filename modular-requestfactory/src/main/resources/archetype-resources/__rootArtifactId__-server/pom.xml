@@ -28,11 +28,11 @@
     </dependency>
     <dependency>
       <groupId>org.gwtproject.web.bindery</groupId>
-      <artifactId>requestfactory-server</artifactId>
+      <artifactId>requestfactory-server-jakarta</artifactId>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
   </dependencies>
