@@ -96,16 +96,6 @@
             </loginServices>
           </configuration>
         </plugin>
-        <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat7-maven-plugin</artifactId>
-          <configuration>
-            <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
-            <path>/</path>
-            <uriEncoding>UTF-8</uriEncoding>
-            <tomcatUsers>${dollar}{basedir}/src/main/tomcatconf/tomcat-users.xml</tomcatUsers>
-          </configuration>
-        </plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
         <plugin>
@@ -174,13 +164,6 @@
                     <resourceBase>${dollar}{basedir}/../target/gwt/launcherDir/</resourceBase>
                   </resourceBases>
                 </webApp>
-              </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.tomcat.maven</groupId>
-              <artifactId>tomcat7-maven-plugin</artifactId>
-              <configuration>
-                <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
               </configuration>
             </plugin>
           </plugins>

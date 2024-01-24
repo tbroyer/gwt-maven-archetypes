@@ -37,8 +37,6 @@ Change directory to your generated project and issue the following commands:
 1. In one terminal window: `mvn gwt:codeserver -pl *-client -am`
 2. In another terminal window: `mvn jetty:run -pl *-server -am -Denv=dev`
 
-Or if you'd rather use Tomcat than Jetty, use `mvn tomcat7:run` instead of `mvn jetty:run`.
-
 Note that the `-pl` and `-am` are not strictly necessary, they just tell Maven not to
 build the client module when you're dealing with the server one, and vice versa.
 
@@ -46,8 +44,8 @@ build the client module when you're dealing with the server one, and vice versa.
 ### Profiles
 
 There's a special profile defined in the POM file of server modules:
-`env-dev`, which is used only when developping. It configures the Jetty and Tomcat
-plugins and removes the dependency on the client module (declared in the `env-prod`
+`env-dev`, which is used only when developping. It configures the Jetty plugin
+and removes the dependency on the client module (declared in the `env-prod`
 profile, active by default.)
 
 To activate the `env-dev` profile you can provide the `-Denv=dev` system property, or

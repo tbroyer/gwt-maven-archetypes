@@ -43,15 +43,6 @@
             <contextXml>${dollar}{basedir}/src/main/jettyconf/context.xml</contextXml>
           </configuration>
         </plugin>
-        <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>
-          <artifactId>tomcat7-maven-plugin</artifactId>
-          <configuration>
-            <addWarDependenciesInClassloader>false</addWarDependenciesInClassloader>
-            <path>/</path>
-            <uriEncoding>UTF-8</uriEncoding>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -94,13 +85,6 @@
                     <resourceBase>${dollar}{basedir}/../target/gwt/launcherDir/</resourceBase>
                   </resourceBases>
                 </webApp>
-              </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.tomcat.maven</groupId>
-              <artifactId>tomcat7-maven-plugin</artifactId>
-              <configuration>
-                <contextFile>${dollar}{basedir}/src/main/tomcatconf/context.xml</contextFile>
               </configuration>
             </plugin>
           </plugins>
