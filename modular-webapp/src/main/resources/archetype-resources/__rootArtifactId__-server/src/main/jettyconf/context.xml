@@ -1,3 +1,4 @@
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "https://www.eclipse.org/jetty/configure_11_0.dtd">
 <Configure class="org.eclipse.jetty.webapp.WebAppContext">
   <Call name="setInitParameter">
     <Arg>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</Arg>
