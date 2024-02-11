@@ -37,6 +37,11 @@
         <inherited>false</inherited>
         <configuration>
           <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>
+          <!-- To be able to use gwt:devmode (useful on Windows where Ctrl+C won't kill gwt:codeserver)-->
+          <warDir>${project.build.directory}/gwt/launcherDir</warDir>
+          <devmodeArgs>
+            <arg>-noserver</arg>
+          </devmodeArgs>
         </configuration>
       </plugin>
     </plugins>
