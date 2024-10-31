@@ -9,7 +9,7 @@ on:
       - '**/*.md'
 
 jobs:
-  linux-jdk8:
+  linux-jdk17:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
