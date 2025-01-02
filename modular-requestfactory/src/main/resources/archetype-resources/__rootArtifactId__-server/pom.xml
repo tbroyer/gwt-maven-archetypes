@@ -20,14 +20,6 @@
     </dependency>
     <dependency>
       <groupId>org.gwtproject.web.bindery</groupId>
-      <artifactId>requestfactory-apt</artifactId>
-      <!-- This is an annotation processor, it's only needed at compile-time -->
-      <optional>true</optional>
-      <!-- The provided scope will exclude the dependency from the webapp classpath in jetty-maven-plugin -->
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.gwtproject.web.bindery</groupId>
       <artifactId>requestfactory-server-jakarta</artifactId>
     </dependency>
     <dependency>
@@ -60,9 +52,21 @@
                 <argument>${dollar}{project.build.outputDirectory}</argument>
                 <argument>${package}.${module}Factory</argument>
               </arguments>
+              <includePluginDependencies>true</includePluginDependencies>
+              <executableDependency>
+                <groupId>org.gwtproject.web.bindery</groupId>
+                <artifactId>requestfactory-apt</artifactId>
+              </executableDependency>
             </configuration>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.gwtproject.web.bindery</groupId>
+            <artifactId>requestfactory-apt</artifactId>
+            <version>${dollar}{gwt.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
     <pluginManagement>

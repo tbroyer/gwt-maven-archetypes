@@ -9,6 +9,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <gwt.version>2.12.1</gwt.version>
   </properties>
 
   <dependencyManagement>
@@ -16,7 +18,7 @@
       <dependency>
         <groupId>org.gwtproject</groupId>
         <artifactId>gwt</artifactId>
-        <version>2.12.1</version>
+        <version>${gwt.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
