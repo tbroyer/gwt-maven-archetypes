@@ -70,10 +70,7 @@
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <configuration>
-            <scanIntervalSeconds>1</scanIntervalSeconds>
-            <webApp>
-              <extraClasspath>${basedir}/../basic-rf-shared/target/classes/</extraClasspath>
-            </webApp>
+            <scan>1</scan>
             <contextXml>${basedir}/src/main/jettyconf/context.xml</contextXml>
           </configuration>
         </plugin>

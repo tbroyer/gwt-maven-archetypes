@@ -71,10 +71,7 @@
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <configuration>
-            <scanIntervalSeconds>1</scanIntervalSeconds>
-            <webApp>
-              <extraClasspath>${dollar}{basedir}/../${rootArtifactId}-shared/target/classes/</extraClasspath>
-            </webApp>
+            <scan>1</scan>
             <contextXml>${dollar}{basedir}/src/main/jettyconf/context.xml</contextXml>
           </configuration>
         </plugin>
