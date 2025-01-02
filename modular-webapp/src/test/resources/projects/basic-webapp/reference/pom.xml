@@ -51,7 +51,7 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
           <configuration>
-            <release>11</release>
+            <release>17</release>
           </configuration>
         </plugin>
         <plugin>
@@ -80,7 +80,7 @@
           <version>1.1.0</version>
           <extensions>true</extensions>
           <configuration>
-            <sourceLevel>11</sourceLevel>
+            <sourceLevel>17</sourceLevel>
             <failOnError>true</failOnError>
           </configuration>
         </plugin>
