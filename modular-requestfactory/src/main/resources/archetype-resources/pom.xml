@@ -26,7 +26,7 @@
       <dependency>
         <groupId>jakarta.servlet</groupId>
         <artifactId>jakarta.servlet-api</artifactId>
-        <version>5.0.0</version>
+        <version>6.0.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -38,9 +38,9 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <inherited>false</inherited>
         <configuration>
-          <launcherDir>${project.build.directory}/gwt/launcherDir</launcherDir>
+          <launcherDir>${dollar}{basedir}/${artifactId}-server/target/gwt/launcherDir</launcherDir>
           <!-- To be able to use gwt:devmode (useful on Windows where Ctrl+C won't kill gwt:codeserver)-->
-          <warDir>${project.build.directory}/gwt/launcherDir</warDir>
+          <warDir>${dollar}{basedir}/${artifactId}-server/target/gwt/launcherDir</warDir>
           <devmodeArgs>
             <arg>-noserver</arg>
           </devmodeArgs>
@@ -73,9 +73,9 @@
           <version>3.4.0</version>
         </plugin>
         <plugin>
-          <groupId>org.eclipse.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <version>11.0.24</version>
+          <groupId>org.eclipse.jetty.ee10</groupId>
+          <artifactId>jetty-ee10-maven-plugin</artifactId>
+          <version>12.0.16</version>
         </plugin>
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>

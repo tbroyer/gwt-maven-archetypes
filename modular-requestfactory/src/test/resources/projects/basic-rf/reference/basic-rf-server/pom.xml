@@ -71,8 +71,8 @@
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.eclipse.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
+          <groupId>org.eclipse.jetty.ee10</groupId>
+          <artifactId>jetty-ee10-maven-plugin</artifactId>
           <configuration>
             <scan>1</scan>
             <contextXml>${basedir}/src/main/jettyconf/context.xml</contextXml>
@@ -137,13 +137,13 @@
         <pluginManagement>
           <plugins>
             <plugin>
-              <groupId>org.eclipse.jetty</groupId>
-              <artifactId>jetty-maven-plugin</artifactId>
+              <groupId>org.eclipse.jetty.ee10</groupId>
+              <artifactId>jetty-ee10-maven-plugin</artifactId>
               <configuration>
                 <webApp>
                   <resourceBases>
                     <resourceBase>${basedir}/src/main/webapp</resourceBase>
-                    <resourceBase>${basedir}/../target/gwt/launcherDir/</resourceBase>
+                    <resourceBase>${project.build.directory}/gwt/launcherDir/</resourceBase>
                   </resourceBases>
                 </webApp>
               </configuration>
