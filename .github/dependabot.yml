@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    ignore:
+      # Jakarta versions need to match the chosen Jakarta EE version
+      - dependency-name: "jakarta.*"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
+      # 3.1.1 introduces a bug (ARCHETYPE-584, ARCHETYPE-587) that's still not fixed to date
+      - dependency-name: "org.apache.maven.*archetype-*"
+    groups:
+      all-minor:
+        update-types:
+          - "minor"
+          - "patch"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    groups:
+      all:
+        patterns:
+          - "*"
