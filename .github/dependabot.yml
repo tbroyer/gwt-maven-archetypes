@@ -2,7 +2,9 @@ version: 2
 updates:
   - package-ecosystem: "maven"
     directories:
-      - "**/*"
+      - "/"
+      - "/**/src/main/resources/archetype-resources/**/*"
+      - "/**/src/test/resources/projects/*/reference/"
     schedule:
       interval: "weekly"
       day: "friday"
