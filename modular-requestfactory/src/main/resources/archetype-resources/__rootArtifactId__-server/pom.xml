@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-#set( $dollar = '$' )
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -14,9 +13,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>${dollar}{project.groupId}</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>${rootArtifactId}-shared</artifactId>
-      <version>${dollar}{project.version}</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.gwtproject.web.bindery</groupId>
@@ -49,7 +48,7 @@
                 <argument>-cp</argument>
                 <classpath />
                 <argument>com.google.web.bindery.requestfactory.apt.ValidationTool</argument>
-                <argument>${dollar}{project.build.outputDirectory}</argument>
+                <argument>${project.build.outputDirectory}</argument>
                 <argument>${package}.${module}Factory</argument>
               </arguments>
               <includePluginDependencies>true</includePluginDependencies>
@@ -64,7 +63,7 @@
           <dependency>
             <groupId>org.gwtproject.web.bindery</groupId>
             <artifactId>requestfactory-apt</artifactId>
-            <version>${dollar}{gwt.version}</version>
+            <version>${gwt.version}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,7 +75,7 @@
           <artifactId>jetty-ee10-maven-plugin</artifactId>
           <configuration>
             <scan>1</scan>
-            <contextXml>${dollar}{basedir}/src/main/jettyconf/context.xml</contextXml>
+            <contextXml>${basedir}/src/main/jettyconf/context.xml</contextXml>
           </configuration>
         </plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
@@ -118,9 +117,9 @@
       </activation>
       <dependencies>
         <dependency>
-          <groupId>${dollar}{project.groupId}</groupId>
+          <groupId>${project.groupId}</groupId>
           <artifactId>${rootArtifactId}-client</artifactId>
-          <version>${dollar}{project.version}</version>
+          <version>${project.version}</version>
           <type>war</type>
           <scope>runtime</scope>
         </dependency>
@@ -143,8 +142,8 @@
               <configuration>
                 <webApp>
                   <resourceBases>
-                    <resourceBase>${dollar}{basedir}/src/main/webapp</resourceBase>
-                    <resourceBase>${dollar}{project.build.directory}/gwt/launcherDir/</resourceBase>
+                    <resourceBase>${basedir}/src/main/webapp</resourceBase>
+                    <resourceBase>${project.build.directory}/gwt/launcherDir/</resourceBase>
                   </resourceBases>
                 </webApp>
               </configuration>

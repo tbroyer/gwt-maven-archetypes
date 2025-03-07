@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-#set( $dollar = '$' )
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -19,7 +18,7 @@
       <dependency>
         <groupId>org.gwtproject</groupId>
         <artifactId>gwt</artifactId>
-        <version>${dollar}{gwt.version}</version>
+        <version>${gwt.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -38,9 +37,9 @@
         <artifactId>gwt-maven-plugin</artifactId>
         <inherited>false</inherited>
         <configuration>
-          <launcherDir>${dollar}{basedir}/${artifactId}-server/target/gwt/launcherDir</launcherDir>
+          <launcherDir>${basedir}/${artifactId}-server/target/gwt/launcherDir</launcherDir>
           <!-- To be able to use gwt:devmode (useful on Windows where Ctrl+C won't kill gwt:codeserver)-->
-          <warDir>${dollar}{basedir}/${artifactId}-server/target/gwt/launcherDir</warDir>
+          <warDir>${basedir}/${artifactId}-server/target/gwt/launcherDir</warDir>
           <devmodeArgs>
             <arg>-noserver</arg>
           </devmodeArgs>
