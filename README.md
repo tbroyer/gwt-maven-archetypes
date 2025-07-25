@@ -1,7 +1,22 @@
 gwt-maven-archetypes
 ====================
 
-This project contains Maven archetypes for modular GWT projects.
+This project contains Maven archetypes for modular GWT projects. The 2 available archetypes differ 
+in their client-server communication approach: 
+
+- `modular-webapp`: Uses traditional GWT RPC (Remote Procedure Call)
+  - Client communicates via RemoteService interface with @RemoteServiceRelativePath
+  - Requires both sync (GreetingService) and async (GreetingServiceAsync) interfaces
+  - Server implements the service interface directly
+
+- `modular-requestfactory`: Uses GWT [RequestFactory](https://www.gwtproject.org/doc/latest/DevGuideRequestFactory.html)
+  - Client communicates via RequestContext with @ServiceName annotation
+  - Uses proxy objects (GreetingResponseProxy) for data transfer
+  - Requires a RequestFactory interface to group contexts
+  - More modern, supports data validation and has better performance for complex data models
+
+Both create modular multi-module Maven projects with client, server, and shared modules, but RequestFactory is the newer, 
+more efficient approach for GWT applications.
 
 How to use
 ----------
