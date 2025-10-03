@@ -9,7 +9,7 @@ on:
       - '**/*.md'
 
 jobs:
-  linux-jdk17:
+  linux-jdk21:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -23,7 +23,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B -U -ntp verify --fail-at-end
 
-  windows-jdk11:
+  windows-jdk17:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v5
