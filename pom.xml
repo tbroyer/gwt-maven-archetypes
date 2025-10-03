@@ -68,12 +68,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
   <build>
     <plugins>
       <plugin>
@@ -81,25 +75,24 @@
         <artifactId>maven-deploy-plugin</artifactId>
         <version>3.1.4</version>
         <configuration>
-          <!-- using nexus-staging-maven-plugin instead -->
+          <!-- using central-publishing-maven-plugin instead -->
           <skip>true</skip>
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.7.0</version>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.9.0</version>
         <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          <publishingServerId>central</publishingServerId>
+          <autoPublish>true</autoPublish>
         </configuration>
         <!-- Note: "manual" configuration (no "extensions=true") to prevent
              flatten-m-p from including the plugin in deployment POMs -->
         <executions>
           <execution>
             <goals>
-              <goal>deploy</goal>
+              <goal>publish</goal>
             </goals>
           </execution>
         </executions>
