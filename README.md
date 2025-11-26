@@ -39,12 +39,6 @@ Change directory to your generated project and issue the following commands:
 Note that the `-pl` and `-am` are not strictly necessary, they just tell Maven not to
 build the client module when you're dealing with the server one, and vice versa.
 
-On Windows, where a <kbd>Ctrl</kbd>+<kbd>C</kbd> would kill the Maven process but not
-the CodeServer process, or similarly in Eclipse when terminating a launch from the
-process console (see [known issue](https://github.com/tbroyer/gwt-maven-plugin/issues/110)),
-one may prefer using `gwt:devmode` rather than `gwt:codeserver`: this opens a window
-that can be closed to stop the process.
-
 
 ### Profiles
 
