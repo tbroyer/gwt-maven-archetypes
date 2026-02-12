@@ -10,7 +10,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <gwt.version>2.12.2</gwt.version>
+    <gwt.version>2.13.0</gwt.version>
   </properties>
 
   <dependencyManagement>
