@@ -74,7 +74,7 @@
         <plugin>
           <groupId>org.eclipse.jetty.ee10</groupId>
           <artifactId>jetty-ee10-maven-plugin</artifactId>
-          <version>12.1.12</version>
+          <version>12.1.13</version>
         </plugin>
         <plugin>
           <groupId>net.ltgt.gwt.maven</groupId>
@@ -103,7 +103,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
-          <version>3.6.3</version>
+          <version>3.6.4</version>
         </plugin>
       </plugins>
     </pluginManagement>
