@@ -1,7 +1,11 @@
 gwt-maven-archetypes
 ====================
 
-This project contains Maven archetypes for modular GWT projects.
+This project contains Maven archetypes for modular GWT projects. The 2 available archetypes differ 
+in their client-server communication approach: 
+
+- `modular-webapp`: Uses traditional GWT RPC (Remote Procedure Call)
+- `modular-requestfactory`: Uses GWT [RequestFactory](https://www.gwtproject.org/doc/latest/DevGuideRequestFactory.html)
 
 How to use
 ----------
